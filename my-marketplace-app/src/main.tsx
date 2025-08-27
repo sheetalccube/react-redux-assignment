@@ -7,11 +7,11 @@ import { type ThemeMode, THEME } from "./Constants/ReusableText";
 import { getTheme } from "./Styles/Theme";
 import Home from "./Pages/Home/Home";
 
-// const LoginPage = React.lazy(() => import("@/Pages/Auth/LoginPage"));
-// const SignupPage = React.lazy(() => import("@/Pages/Auth/Signup"));
+const LoginPage = React.lazy(() => import("./Pages/Auth/LoginPage"));
+const SignupPage = React.lazy(() => import("./Pages/Auth/Signup"));
 // const Todos = React.lazy(() => import("@/Pages/Todos"));
 
-// import withPublic from "@/Hoc/WithPublic";
+import withPublic from "./Hoc/WithPublic";
 // import withAuth from "@/Hoc/WithAuth";
 
 function MainApp() {
@@ -19,8 +19,8 @@ function MainApp() {
   const toggleTheme = () =>
     setMode(mode === THEME.Light ? THEME.Dark : THEME.Light);
 
-  // const PublicLogin = withPublic(LoginPage);
-  // const PublicSignup = withPublic(SignupPage);
+  const PublicLogin = withPublic(LoginPage);
+  const PublicSignup = withPublic(SignupPage);
   // const ProtectedTodos = withAuth(Todos);
 
   return (
@@ -36,9 +36,9 @@ function MainApp() {
               >
                 <Route index element={<Navigate to="/home" replace />} />
                 <Route path="home" element={<Home />} />
-                {/* <Route path="login" element={<PublicLogin />} />
+                <Route path="login" element={<PublicLogin />} />
                 <Route path="signup" element={<PublicSignup />} />
-                <Route path="todos" element={<ProtectedTodos />} /> */}
+                {/* <Route path="todos" element={<ProtectedTodos />} /> */}
                 <Route path="*" element={<div>404 - Page Not Found</div>} />
               </Route>
             </Routes>
