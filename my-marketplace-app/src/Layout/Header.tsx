@@ -20,6 +20,7 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
   const navItems = [
     { label: "Home", path: "/", end: true },
     { label: "Todos", path: "/todos" },
+    { label: "Products", path: "/products" },
   ];
 
   return (

@@ -1,0 +1,224 @@
+{
+  "posts": [
+    { "id": 1, "title": "Post 1", "views": 10 },
+    { "id": 2, "title": "Post 2", "views": 20 },
+    { "id": 3, "title": "Post 3", "views": 30 },
+    { "id": 4, "title": "Post 4", "views": 40 },
+    { "id": 5, "title": "Post 5", "views": 50 },
+    { "id": 6, "title": "Post 6", "views": 60 },
+    { "id": 7, "title": "Post 7", "views": 70 },
+    { "id": 8, "title": "Post 8", "views": 80 },
+    { "id": 9, "title": "Post 9", "views": 90 },
+    { "id": 10, "title": "Post 10", "views": 100 },
+    { "id": 11, "title": "Post 11", "views": 110 },
+    { "id": 12, "title": "Post 12", "views": 120 },
+    { "id": 13, "title": "Post 13", "views": 130 },
+    { "id": 14, "title": "Post 14", "views": 140 },
+    { "id": 15, "title": "Post 15", "views": 150 },
+    { "id": 16, "title": "Post 16", "views": 160 },
+    { "id": 17, "title": "Post 17", "views": 170 },
+    { "id": 18, "title": "Post 18", "views": 180 },
+    { "id": 19, "title": "Post 19", "views": 190 },
+    { "id": 20, "title": "Post 20", "views": 200 },
+    { "id": 21, "title": "Post 21", "views": 210 },
+    { "id": 22, "title": "Post 22", "views": 220 },
+    { "id": 23, "title": "Post 23", "views": 230 },
+    { "id": 24, "title": "Post 24", "views": 240 },
+    { "id": 25, "title": "Post 25", "views": 250 },
+    { "id": 26, "title": "Post 26", "views": 260 },
+    { "id": 27, "title": "Post 27", "views": 270 },
+    { "id": 28, "title": "Post 28", "views": 280 },
+    { "id": 29, "title": "Post 29", "views": 290 },
+    { "id": 30, "title": "Post 30", "views": 300 },
+    { "id": 31, "title": "Post 31", "views": 310 },
+    { "id": 32, "title": "Post 32", "views": 320 },
+    { "id": 33, "title": "Post 33", "views": 330 },
+    { "id": 34, "title": "Post 34", "views": 340 },
+    { "id": 35, "title": "Post 35", "views": 350 },
+    { "id": 36, "title": "Post 36", "views": 360 },
+    { "id": 37, "title": "Post 37", "views": 370 },
+    { "id": 38, "title": "Post 38", "views": 380 },
+    { "id": 39, "title": "Post 39", "views": 390 },
+    { "id": 40, "title": "Post 40", "views": 400 },
+    { "id": 41, "title": "Post 41", "views": 410 },
+    { "id": 42, "title": "Post 42", "views": 420 },
+    { "id": 43, "title": "Post 43", "views": 430 },
+    { "id": 44, "title": "Post 44", "views": 440 },
+    { "id": 45, "title": "Post 45", "views": 450 },
+    { "id": 46, "title": "Post 46", "views": 460 },
+    { "id": 47, "title": "Post 47", "views": 470 },
+    { "id": 48, "title": "Post 48", "views": 480 },
+    { "id": 49, "title": "Post 49", "views": 490 },
+    { "id": 50, "title": "Post 50", "views": 500 }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+
+  "products": [
+    {
+      "id": 1,
+      "name": "iPhone 15 Pro",
+      "description": "Apple smartphone with A17 Bionic chip and titanium design.",
+      "price": 1299,
+      "image": "/images/iphone15.jpg",
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "name": "MacBook Air M2",
+      "description": "Apple laptop powered by M2 chip with sleek design.",
+      "price": 1599,
+      "image": "/images/macbook.jpg",
+      "category": "Computers"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy S23",
+      "description": "Samsung flagship smartphone with Snapdragon 8 Gen 2.",
+      "price": 1199,
+      "image": "/images/galaxy.jpg",
+      "category": "Electronics"
+    },
+    {
+      "id": 4,
+      "name": "Dell XPS 13",
+      "description": "Premium ultrabook with Intel Core i7 processor.",
+      "price": 1399,
+      "image": "/images/dellxps.jpg",
+      "category": "Computers"
+    },
+    {
+      "id": 5,
+      "name": "Sony WH-1000XM5",
+      "description": "Noise cancelling over-ear headphones with superior sound.",
+      "price": 399,
+      "image": "/images/sonyheadphones.jpg",
+      "category": "Accessories"
+    },
+    {
+      "id": 6,
+      "name": "Apple Watch Series 9",
+      "description": "Smartwatch with advanced health and fitness tracking.",
+      "price": 499,
+      "image": "/images/applewatch.jpg",
+      "category": "Wearables"
+    },
+    {
+      "id": 7,
+      "name": "Google Pixel 8",
+      "description": "Google smartphone with AI-powered camera features.",
+      "price": 999,
+      "image": "/images/pixel8.jpg",
+      "category": "Electronics"
+    },
+    {
+      "id": 8,
+      "name": "HP Spectre x360",
+      "description": "2-in-1 convertible laptop with OLED display.",
+      "price": 1450,
+      "image": "/images/hpspectre.jpg",
+      "category": "Computers"
+    },
+    {
+      "id": 9,
+      "name": "iPad Pro 12.9",
+      "description": "Apple tablet with M2 chip and Liquid Retina XDR display.",
+      "price": 1199,
+      "image": "/images/ipadpro.jpg",
+      "category": "Tablets"
+    },
+    {
+      "id": 10,
+      "name": "Logitech MX Master 3S",
+      "description": "Wireless ergonomic mouse with ultra-fast scrolling.",
+      "price": 120,
+      "image": "/images/logitechmx.jpg",
+      "category": "Accessories"
+    },
+    {
+      "id": 11,
+      "name": "Sony PlayStation 5",
+      "description": "Next-gen gaming console with ultra-fast SSD.",
+      "price": 499,
+      "image": "/images/ps5.jpg",
+      "category": "Gaming"
+    },
+    {
+      "id": 12,
+      "name": "Xbox Series X",
+      "description": "Microsoft’s flagship gaming console with 4K support.",
+      "price": 499,
+      "image": "/images/xbox.jpg",
+      "category": "Gaming"
+    },
+    {
+      "id": 13,
+      "name": "Nintendo Switch OLED",
+      "description": "Hybrid gaming console with vibrant OLED screen.",
+      "price": 349,
+      "image": "/images/switch.jpg",
+      "category": "Gaming"
+    },
+    {
+      "id": 14,
+      "name": "Canon EOS R6",
+      "description": "Mirrorless camera with 20MP sensor and 4K video.",
+      "price": 2499,
+      "image": "/images/canonr6.jpg",
+      "category": "Cameras"
+    },
+    {
+      "id": 15,
+      "name": "Sony A7 IV",
+      "description": "Full-frame mirrorless camera with advanced autofocus.",
+      "price": 2699,
+      "image": "/images/sonya7.jpg",
+      "category": "Cameras"
+    },
+    {
+      "id": 16,
+      "name": "Bose QuietComfort 45",
+      "description": "Noise-cancelling headphones with 24h battery life.",
+      "price": 329,
+      "image": "/images/boseqc45.jpg",
+      "category": "Accessories"
+    },
+    {
+      "id": 17,
+      "name": "JBL Flip 6",
+      "description": "Portable Bluetooth speaker with powerful bass.",
+      "price": 129,
+      "image": "/images/jblflip.jpg",
+      "category": "Accessories"
+    },
+    {
+      "id": 18,
+      "name": "GoPro Hero 12",
+      "description": "Action camera with 5.3K video recording.",
+      "price": 449,
+      "image": "/images/gopro.jpg",
+      "category": "Cameras"
+    },
+    {
+      "id": 19,
+      "name": "Kindle Paperwhite",
+      "description": "E-reader with adjustable warm light.",
+      "price": 159,
+      "image": "/images/kindle.jpg",
+      "category": "Tablets"
+    },
+    {
+      "id": 20,
+      "name": "Samsung Galaxy Tab S9",
+      "description": "High-performance Android tablet with AMOLED display.",
+      "price": 899,
+      "image": "/images/galaxytab.jpg",
+      "category": "Tablets"
+    }
+  ]
+}
