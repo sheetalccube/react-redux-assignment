@@ -6,12 +6,14 @@ import {
   Typography,
   Box,
   Stack,
+  Grid,
 } from "@mui/material";
 import { useState } from "react";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
 } from "../../Api/ProductApi";
+import useProductListStyle from "./ProductListStyle";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
@@ -19,51 +21,75 @@ export default function ProductList() {
   const { data, isLoading } = useGetProductsQuery({ page, limit });
   const [deleteProduct] = useDeleteProductMutation();
   const navigate = useNavigate();
+  const styles = useProductListStyle();
 
   if (isLoading) return <p>Loading...</p>;
 
   const totalPages = Math.ceil((data?.total || 0) / limit);
 
   return (
-    <Box p={2}>
-      <Typography variant="h4" gutterBottom align="center">
+    <Box sx={styles.root}>
+      <Typography variant="h4" gutterBottom sx={styles.title}>
         Product List
       </Typography>
+
       <Button
         variant="contained"
         color="primary"
         onClick={() => navigate("/products/new")}
-        sx={{ mb: 2 }}
+        sx={styles.addButton}
       >
         Add Product
       </Button>
 
-      {data?.data?.map((p) => (
-        <Card key={p.id} sx={{ mb: 2 }}>
-          <CardContent>
-            <img src={"src/assets/nature.jpg"} alt={p.name} width={100} />
-            <Typography variant="h6">{p.name}</Typography>
-            <Typography>Price: ₹{p.price}</Typography>
-            <Button
-              onClick={() => navigate(`/products/${p.id}/edit`)}
-              variant="outlined"
-              sx={{ mr: 1 }}
-            >
-              Edit
-            </Button>
-            <Button
-              color="error"
-              variant="outlined"
-              onClick={() => deleteProduct(p.id!)}
-            >
-              Delete
-            </Button>
-          </CardContent>
-        </Card>
-      ))}
+      {/* Product Grid */}
+      <Grid container spacing={3}>
+        {data?.data?.map((p) => (
+          <Grid item key={p.id} xs={12} sm={6} md={4} lg={3}>
+            <Card sx={styles.card}>
+              <CardContent>
+                <Box sx={{ textAlign: "center" }}>
+                  <img
+                    src={"src/assets/nature.jpg"}
+                    alt={p.name}
+                    width="100%"
+                    height={140}
+                    style={styles.image}
+                  />
+                </Box>
 
-      {/* Custom Navigation */}
-      <Stack direction="row" spacing={2} justifyContent="center" mt={2}>
+                <Typography variant="h6" mt={2}>
+                  {p.name}
+                </Typography>
+                <Typography color="text.secondary">
+                  Price: ₹{p.price}
+                </Typography>
+
+                <Stack direction="row" spacing={1} sx={styles.actions}>
+                  <Button
+                    onClick={() => navigate(`/products/${p.id}/edit`)}
+                    variant="outlined"
+                    size="small"
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    color="error"
+                    variant="outlined"
+                    size="small"
+                    onClick={() => deleteProduct(p.id!)}
+                  >
+                    Delete
+                  </Button>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+
+      {/* Pagination */}
+      <Stack direction="row" spacing={2} sx={styles.pagination}>
         <Button
           variant="outlined"
           disabled={page === 1}
