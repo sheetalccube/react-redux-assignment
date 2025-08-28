@@ -3,21 +3,19 @@ import {
   Button,
   Paper,
   Stack,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   TextField,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
 } from "@mui/material";
 import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useTheme } from "@mui/material/styles";
+import useStyle from "./TodosStyle";
 
 function Todos() {
-  const theme = useTheme();
+  const styles = useStyle();
 
   interface TodoItem {
     id: number;
@@ -103,19 +101,11 @@ function Todos() {
 
   return (
     <div>
-      <Box
-        component="form"
-        onSubmit={formik.handleSubmit}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          margin: "0 auto",
-          width: "100%",
-          p: 2,
-        }}
-      >
-        <h3 style={{ color: theme.palette.text.primary }}>Todo Management</h3>
+      {/* Form */}
+      <Box component="form" onSubmit={formik.handleSubmit} sx={styles.formBox}>
+        {/* <Typography variant="h3" sx={styles.title}>
+          Todo Management
+        </Typography> */}
 
         <Stack direction="column" spacing={2}>
           <TextField
@@ -124,7 +114,6 @@ function Todos() {
             value={formik.values.name}
             onBlur={formik.handleBlur}
             sx={{ mb: 2, flex: 1, width: 300 }}
-            required
             margin="dense"
             placeholder="Enter name"
             variant="outlined"
@@ -154,11 +143,7 @@ function Todos() {
         </Stack>
 
         <Button
-          sx={{
-            display: "block",
-            margin: "10px auto 0 auto",
-            width: "180px",
-          }}
+          sx={styles.button}
           disabled={!(formik.isValid && formik.dirty)}
           variant="contained"
           type="submit"
@@ -167,78 +152,53 @@ function Todos() {
           {editingTodo ? "Update Todo" : "Add Todo"}
         </Button>
       </Box>
-
-      {todos.length > 0 && (
-        <div style={{ marginTop: "50px" }}>
-          <TableContainer component={Paper}>
-            <Table>
-              <TableHead
-                sx={{
-                  backgroundColor: theme.palette.primary.main,
-                  "& th": { color: theme.palette.common.white },
-                }}
-              >
-                <TableRow>
-                  <TableCell>
-                    <strong>ID</strong>
-                  </TableCell>
-                  <TableCell>
-                    <strong>Name</strong>
-                  </TableCell>
-                  <TableCell>
-                    <strong>Description</strong>
-                  </TableCell>
-                  <TableCell>
-                    <strong>Action</strong>
-                  </TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {todos.map((item, index) => (
-                  <TableRow
-                    key={item.id}
-                    sx={{
-                      backgroundColor:
-                        index % 2 !== 0
-                          ? theme.palette.action.hover
-                          : theme.palette.background.paper,
+      {/* List View */}
+      {todos.length > 0 ? (
+        <Box sx={styles.listContainer}>
+          <Paper sx={styles.listPaper}>
+            <List>
+              {todos.map((todo, index) => (
+                <ListItem
+                  key={todo.id}
+                  divider
+                  sx={styles.listItem(index)}
+                  secondaryAction={
+                    <Stack direction="row" spacing={1}>
+                      <Button
+                        variant="outlined"
+                        size="small"
+                        onClick={() => handleEdit(todo)}
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        color="error"
+                        size="small"
+                        onClick={() => handleDelete(todo.id)}
+                      >
+                        Delete
+                      </Button>
+                    </Stack>
+                  }
+                >
+                  <ListItemText
+                    primary={`${todo.id}. ${todo.name}`}
+                    primaryTypographyProps={{ sx: styles.listItemTextPrimary }}
+                    secondary={todo.description}
+                    secondaryTypographyProps={{
+                      sx: styles.listItemTextSecondary,
                     }}
-                  >
-                    <TableCell>{item.id}</TableCell>
-                    <TableCell>{item.name}</TableCell>
-                    <TableCell>{item.description}</TableCell>
-                    <TableCell>
-                      <Stack direction="row" spacing={1}>
-                        <Button
-                          variant="outlined"
-                          color="primary"
-                          size="small"
-                          onClick={() => handleEdit(item)}
-                        >
-                          Edit
-                        </Button>
-                        <Button
-                          variant="outlined"
-                          color="error"
-                          size="small"
-                          onClick={() => handleDelete(item.id)}
-                        >
-                          Delete
-                        </Button>
-                      </Stack>
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </div>
-      )}
-
-      {todos.length === 0 && (
-        <p style={{ color: theme.palette.text.secondary }}>
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Paper>
+        </Box>
+      ) : (
+        <Typography sx={styles.emptyText}>
           No todos added yet. Add one above.
-        </p>
+        </Typography>
       )}
     </div>
   );
