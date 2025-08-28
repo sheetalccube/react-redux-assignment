@@ -67,10 +67,10 @@ function Todos() {
           prev.map((todo) =>
             todo.id === editingTodo.id
               ? {
-                ...todo,
-                name: values.name.trim(),
-                description: values.description.trim(),
-              }
+                  ...todo,
+                  name: values.name.trim(),
+                  description: values.description.trim(),
+                }
               : todo
           )
         );
@@ -113,7 +113,7 @@ function Todos() {
             label="Todo Name"
             value={formik.values.name}
             onBlur={formik.handleBlur}
-            sx={{ mb: 2, flex: 1, width: 300 }}
+            sx={styles.textField}
             margin="dense"
             placeholder="Enter name"
             variant="outlined"
@@ -127,11 +127,10 @@ function Todos() {
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.description}
-            required
-            margin="dense"
             label="Description"
             placeholder="Enter Description"
-            sx={{ mb: 2, flex: 2, width: 300 }}
+            sx={styles.textField}
+            margin="dense"
             variant="outlined"
             size="medium"
             name="description"
