@@ -1,11 +1,11 @@
 export const COLORS = {
-  PRIMARY: "#E91E63",
+  PRIMARY: "#1ee9a5ff",
 
   LIGHT: {
     TEXT_PRIMARY: "#000000",
     TEXT_SECONDARY: "#333333",
-    BACKGROUND: "#FFFFFF",
-    PAPER: "#F5F5F5",
+    BACKGROUND: "rgba(255, 255, 255, 1)",
+    PAPER: "#ffffffff",
   },
 
   DARK: {
