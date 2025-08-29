@@ -49,24 +49,25 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
 
           {/* Desktop links */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
-            <NavLink
+            {/* <NavLink
               to="/"
               end
               style={({ isActive }) => style.navLink(isActive)}
             >
               Home
-            </NavLink>
-            <NavLink
-              to="/todos"
-              style={({ isActive }) => style.navLink(isActive)}
-            >
-              Todos
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to="/products"
               style={({ isActive }) => style.navLink(isActive)}
             >
               Products
+            </NavLink>
+
+            <NavLink
+              to="/todos"
+              style={({ isActive }) => style.navLink(isActive)}
+            >
+              Todos
             </NavLink>
           </Box>
 
