@@ -12,6 +12,8 @@ import { useContext, useState } from "react";
 import useHeaderStyle from "./HeaderStyle";
 import { type ThemeMode } from "../Constants/ReusableText";
 import { UserContext } from "../Context/UserContext";
+import { logout } from "../Pages/Auth/AuthSlice";
+import { useDispatch } from "react-redux";
 
 interface HeaderProps {
   mode: ThemeMode;
@@ -20,6 +22,7 @@ interface HeaderProps {
 
 function Header({ mode, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { setUserType } = useContext(UserContext);
   const isLoggedIn = localStorage.getItem("token");
   const style = useHeaderStyle();
@@ -30,6 +33,7 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
     localStorage.removeItem("userType");
     setUserType("");
     navigate("/login");
+    dispatch(logout());
   };
 
   const toggleDrawer = () => setMobileOpen((prev) => !prev);

@@ -34,15 +34,16 @@ export default function ProductList() {
       <Typography variant="h4" gutterBottom sx={styles.title}>
         Product List
       </Typography>
-
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => navigate("/products/new")}
-        sx={styles.addButton}
-      >
-        Add Product
-      </Button>
+      {userType === "admin" && (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/products/new")}
+          sx={styles.addButton}
+        >
+          Add Product
+        </Button>
+      )}
 
       {/* Product Grid */}
       <Grid container spacing={3}>

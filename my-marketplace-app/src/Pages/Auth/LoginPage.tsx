@@ -12,11 +12,14 @@ import {
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { UserContext } from "../../Context/UserContext";
+import { useDispatch } from "react-redux";
+import { login } from "./AuthSlice";
 
 export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const { setUserType } = useContext(UserContext);
+  const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
     username: Yup.string()
@@ -43,6 +46,7 @@ export default function Login() {
         localStorage.setItem("userType", "admin");
         setUserType("admin");
         navigate("/");
+        dispatch(login(values));
       } else if (values.username === "sheetal" && values.password === "1234") {
         localStorage.setItem("token", "dummy-token-1234567890");
         localStorage.setItem("userType", "user");
