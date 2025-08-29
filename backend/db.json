@@ -1,224 +1,517 @@
 {
   "posts": [
-    { "id": 1, "title": "Post 1", "views": 10 },
-    { "id": 2, "title": "Post 2", "views": 20 },
-    { "id": 3, "title": "Post 3", "views": 30 },
-    { "id": 4, "title": "Post 4", "views": 40 },
-    { "id": 5, "title": "Post 5", "views": 50 },
-    { "id": 6, "title": "Post 6", "views": 60 },
-    { "id": 7, "title": "Post 7", "views": 70 },
-    { "id": 8, "title": "Post 8", "views": 80 },
-    { "id": 9, "title": "Post 9", "views": 90 },
-    { "id": 10, "title": "Post 10", "views": 100 },
-    { "id": 11, "title": "Post 11", "views": 110 },
-    { "id": 12, "title": "Post 12", "views": 120 },
-    { "id": 13, "title": "Post 13", "views": 130 },
-    { "id": 14, "title": "Post 14", "views": 140 },
-    { "id": 15, "title": "Post 15", "views": 150 },
-    { "id": 16, "title": "Post 16", "views": 160 },
-    { "id": 17, "title": "Post 17", "views": 170 },
-    { "id": 18, "title": "Post 18", "views": 180 },
-    { "id": 19, "title": "Post 19", "views": 190 },
-    { "id": 20, "title": "Post 20", "views": 200 },
-    { "id": 21, "title": "Post 21", "views": 210 },
-    { "id": 22, "title": "Post 22", "views": 220 },
-    { "id": 23, "title": "Post 23", "views": 230 },
-    { "id": 24, "title": "Post 24", "views": 240 },
-    { "id": 25, "title": "Post 25", "views": 250 },
-    { "id": 26, "title": "Post 26", "views": 260 },
-    { "id": 27, "title": "Post 27", "views": 270 },
-    { "id": 28, "title": "Post 28", "views": 280 },
-    { "id": 29, "title": "Post 29", "views": 290 },
-    { "id": 30, "title": "Post 30", "views": 300 },
-    { "id": 31, "title": "Post 31", "views": 310 },
-    { "id": 32, "title": "Post 32", "views": 320 },
-    { "id": 33, "title": "Post 33", "views": 330 },
-    { "id": 34, "title": "Post 34", "views": 340 },
-    { "id": 35, "title": "Post 35", "views": 350 },
-    { "id": 36, "title": "Post 36", "views": 360 },
-    { "id": 37, "title": "Post 37", "views": 370 },
-    { "id": 38, "title": "Post 38", "views": 380 },
-    { "id": 39, "title": "Post 39", "views": 390 },
-    { "id": 40, "title": "Post 40", "views": 400 },
-    { "id": 41, "title": "Post 41", "views": 410 },
-    { "id": 42, "title": "Post 42", "views": 420 },
-    { "id": 43, "title": "Post 43", "views": 430 },
-    { "id": 44, "title": "Post 44", "views": 440 },
-    { "id": 45, "title": "Post 45", "views": 450 },
-    { "id": 46, "title": "Post 46", "views": 460 },
-    { "id": 47, "title": "Post 47", "views": 470 },
-    { "id": 48, "title": "Post 48", "views": 480 },
-    { "id": 49, "title": "Post 49", "views": 490 },
-    { "id": 50, "title": "Post 50", "views": 500 }
+    {
+      "id": "1",
+      "title": "Post 1",
+      "views": 10
+    },
+    {
+      "id": "2",
+      "title": "Post 2",
+      "views": 20
+    },
+    {
+      "id": "3",
+      "title": "Post 3",
+      "views": 30
+    },
+    {
+      "id": "4",
+      "title": "Post 4",
+      "views": 40
+    },
+    {
+      "id": "5",
+      "title": "Post 5",
+      "views": 50
+    },
+    {
+      "id": "6",
+      "title": "Post 6",
+      "views": 60
+    },
+    {
+      "id": "7",
+      "title": "Post 7",
+      "views": 70
+    },
+    {
+      "id": "8",
+      "title": "Post 8",
+      "views": 80
+    },
+    {
+      "id": "9",
+      "title": "Post 9",
+      "views": 90
+    },
+    {
+      "id": "10",
+      "title": "Post 10",
+      "views": 100
+    },
+    {
+      "id": "11",
+      "title": "Post 11",
+      "views": 110
+    },
+    {
+      "id": "12",
+      "title": "Post 12",
+      "views": 120
+    },
+    {
+      "id": "13",
+      "title": "Post 13",
+      "views": 130
+    },
+    {
+      "id": "14",
+      "title": "Post 14",
+      "views": 140
+    },
+    {
+      "id": "15",
+      "title": "Post 15",
+      "views": 150
+    },
+    {
+      "id": "16",
+      "title": "Post 16",
+      "views": 160
+    },
+    {
+      "id": "17",
+      "title": "Post 17",
+      "views": 170
+    },
+    {
+      "id": "18",
+      "title": "Post 18",
+      "views": 180
+    },
+    {
+      "id": "19",
+      "title": "Post 19",
+      "views": 190
+    },
+    {
+      "id": "20",
+      "title": "Post 20",
+      "views": 200
+    },
+    {
+      "id": "21",
+      "title": "Post 21",
+      "views": 210
+    },
+    {
+      "id": "22",
+      "title": "Post 22",
+      "views": 220
+    },
+    {
+      "id": "23",
+      "title": "Post 23",
+      "views": 230
+    },
+    {
+      "id": "24",
+      "title": "Post 24",
+      "views": 240
+    },
+    {
+      "id": "25",
+      "title": "Post 25",
+      "views": 250
+    },
+    {
+      "id": "26",
+      "title": "Post 26",
+      "views": 260
+    },
+    {
+      "id": "27",
+      "title": "Post 27",
+      "views": 270
+    },
+    {
+      "id": "28",
+      "title": "Post 28",
+      "views": 280
+    },
+    {
+      "id": "29",
+      "title": "Post 29",
+      "views": 290
+    },
+    {
+      "id": "30",
+      "title": "Post 30",
+      "views": 300
+    },
+    {
+      "id": "31",
+      "title": "Post 31",
+      "views": 310
+    },
+    {
+      "id": "32",
+      "title": "Post 32",
+      "views": 320
+    },
+    {
+      "id": "33",
+      "title": "Post 33",
+      "views": 330
+    },
+    {
+      "id": "34",
+      "title": "Post 34",
+      "views": 340
+    },
+    {
+      "id": "35",
+      "title": "Post 35",
+      "views": 350
+    },
+    {
+      "id": "36",
+      "title": "Post 36",
+      "views": 360
+    },
+    {
+      "id": "37",
+      "title": "Post 37",
+      "views": 370
+    },
+    {
+      "id": "38",
+      "title": "Post 38",
+      "views": 380
+    },
+    {
+      "id": "39",
+      "title": "Post 39",
+      "views": 390
+    },
+    {
+      "id": "40",
+      "title": "Post 40",
+      "views": 400
+    },
+    {
+      "id": "41",
+      "title": "Post 41",
+      "views": 410
+    },
+    {
+      "id": "42",
+      "title": "Post 42",
+      "views": 420
+    },
+    {
+      "id": "43",
+      "title": "Post 43",
+      "views": 430
+    },
+    {
+      "id": "44",
+      "title": "Post 44",
+      "views": 440
+    },
+    {
+      "id": "45",
+      "title": "Post 45",
+      "views": 450
+    },
+    {
+      "id": "46",
+      "title": "Post 46",
+      "views": 460
+    },
+    {
+      "id": "47",
+      "title": "Post 47",
+      "views": 470
+    },
+    {
+      "id": "48",
+      "title": "Post 48",
+      "views": 480
+    },
+    {
+      "id": "49",
+      "title": "Post 49",
+      "views": 490
+    },
+    {
+      "id": "50",
+      "title": "Post 50",
+      "views": 500
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
     "name": "typicode"
   },
-
   "products": [
     {
-      "id": 1,
-      "name": "iPhone 15 Pro",
-      "description": "Apple smartphone with A17 Bionic chip and titanium design.",
-      "price": 1299,
-      "image": "/images/iphone15.jpg",
-      "category": "Electronics"
+      "name": "Product 1",
+      "price": "58",
+      "image": "https://picsum.photos/200/140?random=1",
+      "category": "Electronics",
+      "description": "This is a description for Product 1. It is a high-quality electronic item.",
+      "id": "1"
     },
     {
-      "id": 2,
-      "name": "MacBook Air M2",
-      "description": "Apple laptop powered by M2 chip with sleek design.",
-      "price": 1599,
-      "image": "/images/macbook.jpg",
-      "category": "Computers"
+      "id": "2",
+      "name": "Product 2",
+      "price": 330,
+      "image": "https://picsum.photos/200/140?random=2",
+      "category": "Books",
+      "description": "This is a description for Product 2. It is a high-quality book item."
     },
     {
-      "id": 3,
-      "name": "Samsung Galaxy S23",
-      "description": "Samsung flagship smartphone with Snapdragon 8 Gen 2.",
-      "price": 1199,
-      "image": "/images/galaxy.jpg",
-      "category": "Electronics"
+      "id": "3",
+      "name": "Product 3",
+      "price": 330,
+      "image": "https://picsum.photos/200/140?random=3",
+      "category": "Books",
+      "description": "This is a description for Product 3. It is a high-quality book item."
     },
     {
-      "id": 4,
-      "name": "Dell XPS 13",
-      "description": "Premium ultrabook with Intel Core i7 processor.",
-      "price": 1399,
-      "image": "/images/dellxps.jpg",
-      "category": "Computers"
+      "id": "4",
+      "name": "Product 4",
+      "price": 764,
+      "image": "https://picsum.photos/200/140?random=4",
+      "category": "Toys",
+      "description": "This is a description for Product 4. It is a high-quality toy item."
     },
     {
-      "id": 5,
-      "name": "Sony WH-1000XM5",
-      "description": "Noise cancelling over-ear headphones with superior sound.",
-      "price": 399,
-      "image": "/images/sonyheadphones.jpg",
-      "category": "Accessories"
+      "id": "5",
+      "name": "Product 5",
+      "price": 421,
+      "image": "https://picsum.photos/200/140?random=5",
+      "category": "Home",
+      "description": "This is a description for Product 5. It is a high-quality home item."
     },
     {
-      "id": 6,
-      "name": "Apple Watch Series 9",
-      "description": "Smartwatch with advanced health and fitness tracking.",
-      "price": 499,
-      "image": "/images/applewatch.jpg",
-      "category": "Wearables"
+      "id": "6",
+      "name": "Product 6",
+      "price": 678,
+      "image": "https://picsum.photos/200/140?random=6",
+      "category": "Electronics",
+      "description": "This is a description for Product 6. It is a high-quality electronic item."
     },
     {
-      "id": 7,
-      "name": "Google Pixel 8",
-      "description": "Google smartphone with AI-powered camera features.",
-      "price": 999,
-      "image": "/images/pixel8.jpg",
-      "category": "Electronics"
+      "id": "7",
+      "name": "Product 7",
+      "price": 245,
+      "image": "https://picsum.photos/200/140?random=7",
+      "category": "Clothing",
+      "description": "This is a description for Product 7. It is a high-quality clothing item."
     },
     {
-      "id": 8,
-      "name": "HP Spectre x360",
-      "description": "2-in-1 convertible laptop with OLED display.",
-      "price": 1450,
-      "image": "/images/hpspectre.jpg",
-      "category": "Computers"
+      "id": "8",
+      "name": "Product 8",
+      "price": 991,
+      "image": "https://picsum.photos/200/140?random=8",
+      "category": "Books",
+      "description": "This is a description for Product 8. It is a high-quality book item."
     },
     {
-      "id": 9,
-      "name": "iPad Pro 12.9",
-      "description": "Apple tablet with M2 chip and Liquid Retina XDR display.",
-      "price": 1199,
-      "image": "/images/ipadpro.jpg",
-      "category": "Tablets"
+      "id": "9",
+      "name": "Product 9",
+      "price": 512,
+      "image": "https://picsum.photos/200/140?random=9",
+      "category": "Toys",
+      "description": "This is a description for Product 9. It is a high-quality toy item."
     },
     {
-      "id": 10,
-      "name": "Logitech MX Master 3S",
-      "description": "Wireless ergonomic mouse with ultra-fast scrolling.",
-      "price": 120,
-      "image": "/images/logitechmx.jpg",
-      "category": "Accessories"
+      "id": "10",
+      "name": "Product 10",
+      "price": 330,
+      "image": "https://picsum.photos/200/140?random=10",
+      "category": "Home",
+      "description": "This is a description for Product 10. It is a high-quality home item."
     },
     {
-      "id": 11,
-      "name": "Sony PlayStation 5",
-      "description": "Next-gen gaming console with ultra-fast SSD.",
-      "price": 499,
-      "image": "/images/ps5.jpg",
-      "category": "Gaming"
+      "id": "11",
+      "name": "Product 11",
+      "price": 874,
+      "image": "https://picsum.photos/200/140?random=11",
+      "category": "Electronics",
+      "description": "This is a description for Product 11. It is a high-quality electronic item."
     },
     {
-      "id": 12,
-      "name": "Xbox Series X",
-      "description": "Microsoft’s flagship gaming console with 4K support.",
-      "price": 499,
-      "image": "/images/xbox.jpg",
-      "category": "Gaming"
+      "id": "12",
+      "name": "Product 12",
+      "price": 415,
+      "image": "https://picsum.photos/200/140?random=12",
+      "category": "Clothing",
+      "description": "This is a description for Product 12. It is a high-quality clothing item."
     },
     {
-      "id": 13,
-      "name": "Nintendo Switch OLED",
-      "description": "Hybrid gaming console with vibrant OLED screen.",
-      "price": 349,
-      "image": "/images/switch.jpg",
-      "category": "Gaming"
+      "id": "13",
+      "name": "Product 13",
+      "price": 691,
+      "image": "https://picsum.photos/200/140?random=13",
+      "category": "Books",
+      "description": "This is a description for Product 13. It is a high-quality book item."
     },
     {
-      "id": 14,
-      "name": "Canon EOS R6",
-      "description": "Mirrorless camera with 20MP sensor and 4K video.",
-      "price": 2499,
-      "image": "/images/canonr6.jpg",
-      "category": "Cameras"
+      "id": "14",
+      "name": "Product 14",
+      "price": 230,
+      "image": "https://picsum.photos/200/140?random=14",
+      "category": "Toys",
+      "description": "This is a description for Product 14. It is a high-quality toy item."
     },
     {
-      "id": 15,
-      "name": "Sony A7 IV",
-      "description": "Full-frame mirrorless camera with advanced autofocus.",
-      "price": 2699,
-      "image": "/images/sonya7.jpg",
-      "category": "Cameras"
+      "id": "15",
+      "name": "Product 15",
+      "price": 849,
+      "image": "https://picsum.photos/200/140?random=15",
+      "category": "Home",
+      "description": "This is a description for Product 15. It is a high-quality home item."
     },
     {
-      "id": 16,
-      "name": "Bose QuietComfort 45",
-      "description": "Noise-cancelling headphones with 24h battery life.",
-      "price": 329,
-      "image": "/images/boseqc45.jpg",
-      "category": "Accessories"
+      "id": "16",
+      "name": "Product 16",
+      "price": 432,
+      "image": "https://picsum.photos/200/140?random=16",
+      "category": "Electronics",
+      "description": "This is a description for Product 16. It is a high-quality electronic item."
     },
     {
-      "id": 17,
-      "name": "JBL Flip 6",
-      "description": "Portable Bluetooth speaker with powerful bass.",
-      "price": 129,
-      "image": "/images/jblflip.jpg",
-      "category": "Accessories"
+      "id": "17",
+      "name": "Product 17",
+      "price": 712,
+      "image": "https://picsum.photos/200/140?random=17",
+      "category": "Clothing",
+      "description": "This is a description for Product 17. It is a high-quality clothing item."
     },
     {
-      "id": 18,
-      "name": "GoPro Hero 12",
-      "description": "Action camera with 5.3K video recording.",
-      "price": 449,
-      "image": "/images/gopro.jpg",
-      "category": "Cameras"
+      "id": "18",
+      "name": "Product 18",
+      "price": 365,
+      "image": "https://picsum.photos/200/140?random=18",
+      "category": "Books",
+      "description": "This is a description for Product 18. It is a high-quality book item."
     },
     {
-      "id": 19,
-      "name": "Kindle Paperwhite",
-      "description": "E-reader with adjustable warm light.",
-      "price": 159,
-      "image": "/images/kindle.jpg",
-      "category": "Tablets"
+      "id": "19",
+      "name": "Product 19",
+      "price": 998,
+      "image": "https://picsum.photos/200/140?random=19",
+      "category": "Toys",
+      "description": "This is a description for Product 19. It is a high-quality toy item."
     },
     {
-      "id": 20,
-      "name": "Samsung Galaxy Tab S9",
-      "description": "High-performance Android tablet with AMOLED display.",
-      "price": 899,
-      "image": "/images/galaxytab.jpg",
-      "category": "Tablets"
+      "id": "20",
+      "name": "Product 20",
+      "price": 521,
+      "image": "https://picsum.photos/200/140?random=20",
+      "category": "Home",
+      "description": "This is a description for Product 20. It is a high-quality home item."
+    },
+    {
+      "id": "21",
+      "name": "Product 21",
+      "price": 780,
+      "image": "https://picsum.photos/200/140?random=21",
+      "category": "Electronics",
+      "description": "This is a description for Product 21. It is a high-quality electronic item."
+    },
+    {
+      "id": "22",
+      "name": "Product 22",
+      "price": 412,
+      "image": "https://picsum.photos/200/140?random=22",
+      "category": "Clothing",
+      "description": "This is a description for Product 22. It is a high-quality clothing item."
+    },
+    {
+      "id": "23",
+      "name": "Product 23",
+      "price": 635,
+      "image": "https://picsum.photos/200/140?random=23",
+      "category": "Books",
+      "description": "This is a description for Product 23. It is a high-quality book item."
+    },
+    {
+      "id": "24",
+      "name": "Product 24",
+      "price": 297,
+      "image": "https://picsum.photos/200/140?random=24",
+      "category": "Toys",
+      "description": "This is a description for Product 24. It is a high-quality toy item."
+    },
+    {
+      "id": "25",
+      "name": "Product 25",
+      "price": 855,
+      "image": "https://picsum.photos/200/140?random=25",
+      "category": "Home",
+      "description": "This is a description for Product 25. It is a high-quality home item."
+    },
+    {
+      "id": "26",
+      "name": "Product 26",
+      "price": 490,
+      "image": "https://picsum.photos/200/140?random=26",
+      "category": "Electronics",
+      "description": "This is a description for Product 26. It is a high-quality electronic item."
+    },
+    {
+      "id": "27",
+      "name": "Product 27",
+      "price": 611,
+      "image": "https://picsum.photos/200/140?random=27",
+      "category": "Clothing",
+      "description": "This is a description for Product 27. It is a high-quality clothing item."
+    },
+    {
+      "id": "28",
+      "name": "Product 28",
+      "price": 378,
+      "image": "https://picsum.photos/200/140?random=28",
+      "category": "Books",
+      "description": "This is a description for Product 28. It is a high-quality book item."
+    },
+    {
+      "id": "29",
+      "name": "Product 29",
+      "price": 921,
+      "image": "https://picsum.photos/200/140?random=29",
+      "category": "Toys",
+      "description": "This is a description for Product 29. It is a high-quality toy item."
+    },
+    {
+      "id": "30",
+      "name": "Product 30",
+      "price": 534,
+      "image": "https://picsum.photos/200/140?random=30",
+      "category": "Home",
+      "description": "This is a description for Product 30. It is a high-quality home item."
+    },
+    {
+      "id": "48f8",
+      "name": "test",
+      "price": "5",
+      "image": ""
     }
   ]
 }

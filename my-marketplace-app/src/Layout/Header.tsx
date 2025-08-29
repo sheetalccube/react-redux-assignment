@@ -8,9 +8,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useHeaderStyle from "./HeaderStyle";
 import { type ThemeMode } from "../Constants/ReusableText";
+import { UserContext } from "../Context/UserContext";
 
 interface HeaderProps {
   mode: ThemeMode;
@@ -19,12 +20,15 @@ interface HeaderProps {
 
 function Header({ mode, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();
+  const { setUserType } = useContext(UserContext);
   const isLoggedIn = localStorage.getItem("token");
   const style = useHeaderStyle();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("userType");
+    setUserType("");
     navigate("/login");
   };
 

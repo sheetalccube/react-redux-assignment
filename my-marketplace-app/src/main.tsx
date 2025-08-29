@@ -17,6 +17,7 @@ const ProductForm = React.lazy(() => import("./Pages/Product/ProductForm"));
 import withPublic from "./Hoc/WithPublic";
 import withAuth from "./Hoc/WithAuth";
 import { store } from "./Store/Store";
+import { UserProvider } from "./Context/UserContext";
 
 function MainApp() {
   const [mode, setMode] = useState<ThemeMode>(THEME.Light);
@@ -59,7 +60,9 @@ function MainApp() {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
-    <MainApp />
+    <UserProvider>
+      <MainApp />
+    </UserProvider>
   </Provider>
 );
 export default MainApp;

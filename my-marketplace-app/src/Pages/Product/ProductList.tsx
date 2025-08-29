@@ -8,12 +8,13 @@ import {
   Stack,
   Grid,
 } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
 } from "../../Api/ProductApi";
 import useProductListStyle from "./ProductListStyle";
+import { UserContext } from "../../Context/UserContext";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
@@ -22,6 +23,7 @@ export default function ProductList() {
   const [deleteProduct] = useDeleteProductMutation();
   const navigate = useNavigate();
   const styles = useProductListStyle();
+  const { userType } = useContext(UserContext);
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -67,24 +69,25 @@ export default function ProductList() {
                   Price: ₹{p.price}
                 </Typography>
                 <Typography sx={styles.description}>{p.description}</Typography>
-
-                <Stack direction="row" spacing={1} sx={styles.actions}>
-                  <Button
-                    onClick={() => navigate(`/products/${p.id}/edit`)}
-                    variant="outlined"
-                    size="small"
-                  >
-                    Edit
-                  </Button>
-                  <Button
-                    color="error"
-                    variant="outlined"
-                    size="small"
-                    onClick={() => deleteProduct(p.id!)}
-                  >
-                    Delete
-                  </Button>
-                </Stack>
+                {userType === "admin" && (
+                  <Stack direction="row" spacing={1} sx={styles.actions}>
+                    <Button
+                      onClick={() => navigate(`/products/${p.id}/edit`)}
+                      variant="outlined"
+                      size="small"
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      color="error"
+                      variant="outlined"
+                      size="small"
+                      onClick={() => deleteProduct(p.id!)}
+                    >
+                      Delete
+                    </Button>
+                  </Stack>
+                )}
               </CardContent>
             </Card>
           </Grid>

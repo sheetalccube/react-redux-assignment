@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
@@ -11,10 +11,12 @@ import {
 } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { UserContext } from "../../Context/UserContext";
 
 export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const { setUserType } = useContext(UserContext);
 
   const validationSchema = Yup.object({
     username: Yup.string()
@@ -38,6 +40,12 @@ export default function Login() {
     onSubmit: (values) => {
       if (values.username === "admin" && values.password === "1234") {
         localStorage.setItem("token", "dummy-token-1234567890");
+        localStorage.setItem("userType", "admin");
+        setUserType("admin");
+        navigate("/");
+      } else if (values.username === "sheetal" && values.password === "1234") {
+        localStorage.setItem("token", "dummy-token-1234567890");
+        localStorage.setItem("userType", "user");
         navigate("/");
       } else {
         setError("Invalid username or password.");
