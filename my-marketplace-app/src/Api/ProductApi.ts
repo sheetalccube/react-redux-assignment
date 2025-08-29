@@ -37,7 +37,6 @@ export const productApi = createApi({
 
     getProductById: builder.query<Product, number>({
       query: (id) => `products/${id}`,
-      providesTags: (result, error, id) => [{ type: "Product", id }],
     }),
 
     addProduct: builder.mutation<Product, Product>({
@@ -55,7 +54,7 @@ export const productApi = createApi({
         method: "PUT",
         body: rest,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: "Product", id }],
+      invalidatesTags: ["Product"],
     }),
 
     deleteProduct: builder.mutation<void, number>({

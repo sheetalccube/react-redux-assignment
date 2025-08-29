@@ -67,10 +67,10 @@ function Todos() {
           prev.map((todo) =>
             todo.id === editingTodo.id
               ? {
-                  ...todo,
-                  name: values.name.trim(),
-                  description: values.description.trim(),
-                }
+                ...todo,
+                name: values.name.trim(),
+                description: values.description.trim(),
+              }
               : todo
           )
         );

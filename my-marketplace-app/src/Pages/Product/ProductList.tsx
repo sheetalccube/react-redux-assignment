@@ -47,8 +47,10 @@ export default function ProductList() {
         {data?.data?.map((p) => (
           <Grid item key={p.id} xs={12} sm={6} md={4} lg={3}>
             <Card sx={styles.card}>
-              <CardContent>
+              <CardContent sx={{ flexGrow: 1 }}>
                 <Box sx={{ textAlign: "center" }}>
+                  {/* src={p.image ? p.image : "src/assets/nature.jpg"} */}
+
                   <img
                     src={"src/assets/nature.jpg"}
                     alt={p.name}
@@ -64,6 +66,7 @@ export default function ProductList() {
                 <Typography color="text.secondary">
                   Price: ₹{p.price}
                 </Typography>
+                <Typography sx={styles.description}>{p.description}</Typography>
 
                 <Stack direction="row" spacing={1} sx={styles.actions}>
                   <Button
@@ -88,7 +91,6 @@ export default function ProductList() {
         ))}
       </Grid>
 
-      {/* Pagination */}
       <Stack direction="row" spacing={2} sx={styles.pagination}>
         <Button
           variant="outlined"
