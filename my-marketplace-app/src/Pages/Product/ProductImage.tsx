@@ -5,23 +5,30 @@ import useProductImageStyle from "./ProductImageStyle";
 type ProductImageProps = {
   src: string;
   alt: string;
-  height?: number;
+  variant?: "list" | "cart" | "history";
+};
+
+const sizeMap = {
+  list: { height: 140, width: "100%" },
+  cart: { height: 50, width: 50 },
+  history: { height: 40, width: 40 },
 };
 
 export default function ProductImage({
   src,
   alt,
-  height = 140,
+  variant = "list",
 }: ProductImageProps) {
   const [loading, setLoading] = useState(true);
   const [imgSrc, setImgSrc] = useState(src);
   const styles = useProductImageStyle();
+  const { height, width } = sizeMap[variant];
 
   return (
-    <Box sx={{ ...styles.root, height }}>
+    <Box sx={{ ...styles.root, height, width }}>
       {loading && (
         <Box sx={styles.loader}>
-          <CircularProgress size={24} />
+          <CircularProgress size={20} />
         </Box>
       )}
       <img

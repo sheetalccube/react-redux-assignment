@@ -17,6 +17,8 @@ import withPublic from "./Hoc/WithPublic";
 import withAuth from "./Hoc/WithAuth";
 import { store } from "./Store/Store";
 import { UserProvider } from "./Context/UserContext";
+import CartPage from "./Pages/Cart/CartPage";
+import HistoryPage from "./Pages/History/HistoryPage";
 
 function MainApp() {
   const [mode, setMode] = useState<ThemeMode>(THEME.Light);
@@ -45,6 +47,8 @@ function MainApp() {
                 <Route path="/products" element={<ProductList />} />
                 <Route path="/products/:id/edit" element={<ProductForm />} />
                 <Route path="/products/new" element={<ProductForm />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/history" element={<HistoryPage />} />
 
                 <Route path="*" element={<div>404 - Page Not Found</div>} />
               </Route>

@@ -16,6 +16,8 @@ import {
 import useProductListStyle from "./ProductListStyle";
 import { UserContext } from "../../Context/UserContext";
 import ProductImage from "./ProductImage";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Cart/CartSlice";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
@@ -25,6 +27,7 @@ export default function ProductList() {
   const navigate = useNavigate();
   const styles = useProductListStyle();
   const { userType } = useContext(UserContext);
+  const dispatch = useDispatch();
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -63,7 +66,7 @@ export default function ProductList() {
                   <ProductImage
                     src={p.image || "src/assets/nature.jpg"}
                     alt={p.name}
-                    height={140}
+                    variant="list"
                   />
                 </Box>
 
@@ -92,6 +95,25 @@ export default function ProductList() {
                       Delete
                     </Button>
                   </Stack>
+                )}
+                {userType !== "admin" && (
+                  <Button
+                    variant="contained"
+                    size="small"
+                    sx={{ mt: 2 }}
+                    onClick={() =>
+                      dispatch(
+                        addToCart({
+                          id: p.id,
+                          name: p.name,
+                          price: p.price,
+                          image: p.image,
+                        })
+                      )
+                    }
+                  >
+                    Add to Cart
+                  </Button>
                 )}
               </CardContent>
             </Card>

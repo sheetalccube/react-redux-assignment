@@ -14,6 +14,10 @@ import { type ThemeMode } from "../Constants/ReusableText";
 import { UserContext } from "../Context/UserContext";
 import { logout } from "../Pages/Auth/AuthSlice";
 import { useDispatch } from "react-redux";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Badge } from "@mui/material";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/Store/Store";
 
 interface HeaderProps {
   mode: ThemeMode;
@@ -35,6 +39,8 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
     navigate("/login");
     dispatch(logout());
   };
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const toggleDrawer = () => setMobileOpen((prev) => !prev);
 
@@ -73,6 +79,12 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
             >
               Todos
             </NavLink>
+            <NavLink
+              to="/history"
+              style={({ isActive }) => style.navLink(isActive)}
+            >
+              History
+            </NavLink>
           </Box>
 
           <Box flexGrow={1} />
@@ -85,6 +97,11 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
           >
             {mode === "light" ? "Dark Mode" : "Light Mode"}
           </Button>
+          <IconButton color="inherit" onClick={() => navigate("/cart")}>
+            <Badge badgeContent={cartCount} color="error">
+              <ShoppingCartIcon />
+            </Badge>
+          </IconButton>
 
           {/* Auth buttons (desktop only) */}
           {isLoggedIn ? (
@@ -148,6 +165,14 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
           >
             <Button fullWidth sx={style.drawerButton}>
               Products
+            </Button>
+          </NavLink>
+          <NavLink
+            to="/history"
+            style={({ isActive }) => style.drawerLink(isActive)}
+          >
+            <Button fullWidth sx={style.drawerButton}>
+              History
             </Button>
           </NavLink>
 
