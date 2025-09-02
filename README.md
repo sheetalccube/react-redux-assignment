@@ -14,7 +14,7 @@ It helps users manage daily tasks efficiently and also includes a **product purc
 - ✅ Role-based actions:
   - **Admin** → Can add, edit, and delete products
   - **User** → Can browse and purchase products
-- ✅ Login authentication with JSON Server
+- ✅ Login authentication
 - ✅ Cart checkout & order history
 
 ---

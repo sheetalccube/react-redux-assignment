@@ -22,6 +22,8 @@ export default function ProductForm() {
     name: "",
     price: 0,
     image: "",
+    category: "",
+    description: "",
   });
 
   useEffect(() => {
