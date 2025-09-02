@@ -13,7 +13,6 @@ const Todos = React.lazy(() => import("./Pages/Todo/Todos"));
 const ProductList = React.lazy(() => import("./Pages/Product/ProductList"));
 const ProductForm = React.lazy(() => import("./Pages/Product/ProductForm"));
 
-import withPublic from "./Hoc/WithPublic";
 import withAuth from "./Hoc/WithAuth";
 import { store } from "./Store/Store";
 import { UserProvider } from "./Context/UserContext";
@@ -25,8 +24,6 @@ function MainApp() {
   const toggleTheme = () =>
     setMode(mode === THEME.Light ? THEME.Dark : THEME.Light);
 
-  const PublicLogin = withPublic(LoginPage);
-  const PublicSignup = withPublic(SignupPage);
   const ProtectedTodos = withAuth(Todos);
 
   return (
@@ -41,8 +38,8 @@ function MainApp() {
                 element={<App mode={mode} onToggleTheme={toggleTheme} />}
               >
                 <Route index element={<ProductList />} />
-                <Route path="login" element={<PublicLogin />} />
-                <Route path="signup" element={<PublicSignup />} />
+                <Route path="login" element={<LoginPage />} />
+                <Route path="signup" element={<SignupPage />} />
                 <Route path="todos" element={<ProtectedTodos />} />
                 <Route path="/products" element={<ProductList />} />
                 <Route path="/products/:id/edit" element={<ProductForm />} />

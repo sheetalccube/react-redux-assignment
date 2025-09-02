@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import type { RootState } from "@/Store/Store";
 
 function withAuth<P extends object>(Component: React.ComponentType<P>) {
   function AuthenticatedComponent(props: P) {
-    const isAuth = localStorage.getItem("token");
-    const [countdown, setCountdown] = useState(5); // 5 seconds timer
+    const { isAuthenticated } = useSelector((state: RootState) => state.auth);
+    const [countdown, setCountdown] = useState(5);
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
-      if (!isAuth) {
+      if (!isAuthenticated) {
         const interval = setInterval(() => {
           setCountdown((prev) => {
             if (prev <= 1) {
@@ -19,12 +21,11 @@ function withAuth<P extends object>(Component: React.ComponentType<P>) {
             return prev - 1;
           });
         }, 1000);
-
         return () => clearInterval(interval);
       }
-    }, [isAuth]);
+    }, [isAuthenticated]);
 
-    if (isAuth) {
+    if (isAuthenticated) {
       return <Component {...props} />;
     }
 

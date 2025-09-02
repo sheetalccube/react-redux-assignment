@@ -42,14 +42,19 @@ export default function Login() {
     validationSchema,
     onSubmit: (values) => {
       if (values.username === "admin" && values.password === "1234") {
-        localStorage.setItem("token", "dummy-token-1234567890");
+        const token = "dummy-token-1234567890";
+        localStorage.setItem("token", token);
         localStorage.setItem("userType", "admin");
         setUserType("admin");
+        dispatch(
+          login({ user: { name: values.username, isAdmin: true }, token })
+        );
         navigate("/");
-        dispatch(login(values));
       } else if (values.username === "sheetal" && values.password === "1234") {
-        localStorage.setItem("token", "dummy-token-1234567890");
+        const token = "dummy-token-1234567890";
+        localStorage.setItem("token", token);
         localStorage.setItem("userType", "user");
+        dispatch(login({ user: { name: values.username }, token }));
         navigate("/");
       } else {
         setError("Invalid username or password.");

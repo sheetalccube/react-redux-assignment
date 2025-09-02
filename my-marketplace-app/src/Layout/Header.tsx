@@ -5,6 +5,7 @@ import {
   Box,
   IconButton,
   Drawer,
+  Tooltip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -18,6 +19,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/Store/Store";
+import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+import PersonIcon from "@mui/icons-material/Person";
 
 interface HeaderProps {
   mode: ThemeMode;
@@ -27,6 +30,9 @@ interface HeaderProps {
 function Header({ mode, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { isAuthenticated, user } = useSelector(
+    (state: RootState) => state.auth
+  );
   const { setUserType } = useContext(UserContext);
   const isLoggedIn = localStorage.getItem("token");
   const style = useHeaderStyle();
@@ -36,8 +42,8 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
     localStorage.removeItem("token");
     localStorage.removeItem("userType");
     setUserType("");
-    navigate("/login");
     dispatch(logout());
+    navigate("/login");
   };
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -88,7 +94,6 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
           </Box>
 
           <Box flexGrow={1} />
-
           <Button
             variant="outlined"
             color="inherit"
@@ -102,9 +107,14 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
-
-          {/* Auth buttons (desktop only) */}
-          {isLoggedIn ? (
+          {isAuthenticated && user && (
+            <Tooltip title={user.isAdmin ? "Admin" : "User"}>
+              <IconButton color="inherit" sx={{ mr: 2 }}>
+                {user.isAdmin ? <AdminPanelSettingsIcon /> : <PersonIcon />}
+              </IconButton>
+            </Tooltip>
+          )}
+          {isAuthenticated ? (
             <Button
               variant="outlined"
               color="inherit"
