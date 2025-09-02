@@ -12,12 +12,12 @@ const SignupPage = React.lazy(() => import("./Pages/Auth/Signup"));
 const Todos = React.lazy(() => import("./Pages/Todo/Todos"));
 const ProductList = React.lazy(() => import("./Pages/Product/ProductList"));
 const ProductForm = React.lazy(() => import("./Pages/Product/ProductForm"));
+const CartPage = React.lazy(() => import("@/Pages/Cart/CartPage"));
+const HistoryPage = React.lazy(() => import("@/Pages/History/HistoryPage"));
 
 import withAuth from "./Hoc/WithAuth";
 import { store } from "./Store/Store";
 import { UserProvider } from "./Context/UserContext";
-import CartPage from "./Pages/Cart/CartPage";
-import HistoryPage from "./Pages/History/HistoryPage";
 
 function MainApp() {
   const [mode, setMode] = useState<ThemeMode>(THEME.Light);
@@ -25,6 +25,7 @@ function MainApp() {
     setMode(mode === THEME.Light ? THEME.Dark : THEME.Light);
 
   const ProtectedTodos = withAuth(Todos);
+  const ProtectedCart = withAuth(CartPage);
 
   return (
     <ThemeProvider theme={getTheme(mode)}>
@@ -44,7 +45,7 @@ function MainApp() {
                 <Route path="/products" element={<ProductList />} />
                 <Route path="/products/:id/edit" element={<ProductForm />} />
                 <Route path="/products/new" element={<ProductForm />} />
-                <Route path="/cart" element={<CartPage />} />
+                <Route path="/cart" element={<ProtectedCart />} />
                 <Route path="/history" element={<HistoryPage />} />
 
                 <Route path="*" element={<div>404 - Page Not Found</div>} />
