@@ -21,7 +21,7 @@ import { addToCart } from "../Cart/CartSlice";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
-  const limit = 5;
+  const limit = 10;
   const { data, isLoading } = useGetProductsQuery({ page, limit });
   const [deleteProduct] = useDeleteProductMutation();
   const navigate = useNavigate();
@@ -50,7 +50,7 @@ export default function ProductList() {
       )}
 
       {/* Product Grid */}
-      <Grid container spacing={3}>
+      <Grid container spacing={3} justifyContent="center">
         {data?.data?.map((p) => (
           <Grid item key={p.id} xs={12} sm={6} md={4} lg={3}>
             <Card sx={styles.card}>

@@ -11,16 +11,21 @@ export default function useProductListStyle() {
       mb: 3,
     },
     card: {
-      height: "100%",
+      height: 350,
+      width: 250,
       display: "flex",
       flexDirection: "column",
+      justifyContent: "space-between",
+      overflow: "hidden",
     },
     image: {
+      width: "100%",
+      height: 150,
       objectFit: "cover" as const,
       borderRadius: 8,
     },
     actions: {
-      mt: 2,
+      mt: "auto",
     },
     pagination: {
       mt: 4,
@@ -28,10 +33,14 @@ export default function useProductListStyle() {
     },
     description: {
       mt: 1,
-      whiteSpace: "normal", // allow text to wrap
-      wordBreak: "break-word", // break long words
+      whiteSpace: "normal",
+      wordBreak: "break-word",
       overflowWrap: "break-word",
-      textrap: "wrap",
+      display: "-webkit-box",
+      WebkitLineClamp: 2,
+      WebkitBoxOrient: "vertical",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
     },
   };
 }
