@@ -17,7 +17,6 @@ const HistoryPage = React.lazy(() => import("@/Pages/History/HistoryPage"));
 
 import withAuth from "@/Hoc/WithAuth";
 import { store } from "@/Store/Store";
-import { UserProvider } from "@/Context/UserContext";
 
 function MainApp() {
   const [mode, setMode] = useState<ThemeMode>(THEME.Light);
@@ -60,9 +59,7 @@ function MainApp() {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
-    <UserProvider>
-      <MainApp />
-    </UserProvider>
+    <MainApp />
   </Provider>
 );
 export default MainApp;
