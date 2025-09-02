@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
@@ -7,13 +7,13 @@ import { type ThemeMode, THEME } from "./Constants/ReusableText";
 import { getTheme } from "@/Styles/Theme";
 import { Provider } from "react-redux";
 
-const LoginPage = React.lazy(() => import("@/Pages/Auth/LoginPage"));
-const SignupPage = React.lazy(() => import("@/Pages/Auth/Signup"));
-const Todos = React.lazy(() => import("@/Pages/Todo/Todos"));
-const ProductList = React.lazy(() => import("@/Pages/Product/ProductList"));
-const ProductForm = React.lazy(() => import("@/Pages/Product/ProductForm"));
-const CartPage = React.lazy(() => import("@/Pages/Cart/CartPage"));
-const HistoryPage = React.lazy(() => import("@/Pages/History/HistoryPage"));
+const LoginPage = lazy(() => import("@/Pages/Auth/LoginPage"));
+const SignupPage = lazy(() => import("@/Pages/Auth/Signup"));
+const Todos = lazy(() => import("@/Pages/Todo/Todos"));
+const ProductList = lazy(() => import("@/Pages/Product/ProductList"));
+const ProductForm = lazy(() => import("@/Pages/Product/ProductForm"));
+const CartPage = lazy(() => import("@/Pages/Cart/CartPage"));
+const HistoryPage = lazy(() => import("@/Pages/History/HistoryPage"));
 
 import withAuth from "@/Hoc/WithAuth";
 import { store } from "@/Store/Store";
