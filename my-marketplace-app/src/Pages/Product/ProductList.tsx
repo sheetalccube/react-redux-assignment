@@ -94,7 +94,12 @@ export default function ProductList() {
                     variant="contained"
                     size="small"
                     sx={{ mt: 2 }}
-                    onClick={() =>
+                    onClick={() => {
+                      if (!userType) {
+                        navigate("/login");
+                        return;
+                      }
+
                       dispatch(
                         addToCart({
                           id: p.id,
@@ -102,8 +107,8 @@ export default function ProductList() {
                           price: p.price,
                           image: p.image,
                         })
-                      )
-                    }
+                      );
+                    }}
                   >
                     Add to Cart
                   </Button>
