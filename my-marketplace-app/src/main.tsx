@@ -4,20 +4,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
 import App from "./App";
 import { type ThemeMode, THEME } from "./Constants/ReusableText";
-import { getTheme } from "./Styles/Theme";
+import { getTheme } from "@/Styles/Theme";
 import { Provider } from "react-redux";
 
-const LoginPage = React.lazy(() => import("./Pages/Auth/LoginPage"));
-const SignupPage = React.lazy(() => import("./Pages/Auth/Signup"));
-const Todos = React.lazy(() => import("./Pages/Todo/Todos"));
-const ProductList = React.lazy(() => import("./Pages/Product/ProductList"));
-const ProductForm = React.lazy(() => import("./Pages/Product/ProductForm"));
+const LoginPage = React.lazy(() => import("@/Pages/Auth/LoginPage"));
+const SignupPage = React.lazy(() => import("@/Pages/Auth/Signup"));
+const Todos = React.lazy(() => import("@/Pages/Todo/Todos"));
+const ProductList = React.lazy(() => import("@/Pages/Product/ProductList"));
+const ProductForm = React.lazy(() => import("@/Pages/Product/ProductForm"));
 const CartPage = React.lazy(() => import("@/Pages/Cart/CartPage"));
 const HistoryPage = React.lazy(() => import("@/Pages/History/HistoryPage"));
 
-import withAuth from "./Hoc/WithAuth";
-import { store } from "./Store/Store";
-import { UserProvider } from "./Context/UserContext";
+import withAuth from "@/Hoc/WithAuth";
+import { store } from "@/Store/Store";
+import { UserProvider } from "@/Context/UserContext";
 
 function MainApp() {
   const [mode, setMode] = useState<ThemeMode>(THEME.Light);

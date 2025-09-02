@@ -85,12 +85,14 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
             >
               Todos
             </NavLink>
-            <NavLink
-              to="/history"
-              style={({ isActive }) => style.navLink(isActive)}
-            >
-              History
-            </NavLink>
+            {isAuthenticated && !user?.isAdmin && (
+              <NavLink
+                to="/history"
+                style={({ isActive }) => style.navLink(isActive)}
+              >
+                History
+              </NavLink>
+            )}
           </Box>
 
           <Box flexGrow={1} />
@@ -102,11 +104,13 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
           >
             {mode === "light" ? "Dark Mode" : "Light Mode"}
           </Button>
-          <IconButton color="inherit" onClick={() => navigate("/cart")}>
-            <Badge badgeContent={cartCount} color="error">
-              <ShoppingCartIcon />
-            </Badge>
-          </IconButton>
+          {isAuthenticated && !user?.isAdmin && (
+            <IconButton color="inherit" onClick={() => navigate("/cart")}>
+              <Badge badgeContent={cartCount} color="error">
+                <ShoppingCartIcon />
+              </Badge>
+            </IconButton>
+          )}
           {isAuthenticated && user && (
             <Tooltip title={user.isAdmin ? "Admin" : "User"}>
               <IconButton color="inherit" sx={{ mr: 2 }}>
