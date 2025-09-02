@@ -3,11 +3,13 @@ import { productApi } from "../Api/ProductApi";
 import AuthSlice from "../Pages/Auth/AuthSlice";
 import cartReducer from "../Pages/Cart/CartSlice";
 import orderReducer from "../Pages/Order/OrderSlice";
+import todosReducer from "../Pages/Todo/TodoSlice";
 export const store = configureStore({
   reducer: {
     auth: AuthSlice,
     cart: cartReducer,
     order: orderReducer,
+    todos: todosReducer,
     [productApi.reducerPath]: productApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

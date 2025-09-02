@@ -56,13 +56,6 @@ export default function ProductList() {
             <Card sx={styles.card}>
               <CardContent sx={{ flexGrow: 1 }}>
                 <Box sx={{ textAlign: "center" }}>
-                  {/* <img
-                    src={p.image ? p.image : "src/assets/nature.jpg"}
-                    alt={p.name}
-                    width="100%"
-                    height={140}
-                    style={styles.image}
-                  /> */}
                   <ProductImage
                     src={p.image || "src/assets/nature.jpg"}
                     alt={p.name}

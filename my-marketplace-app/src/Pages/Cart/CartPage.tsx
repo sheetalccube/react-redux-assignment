@@ -29,7 +29,7 @@ export default function CartPage() {
 
       dispatch(addOrder(order));
       dispatch(clearCart());
-      alert("✅ Payment Successful! Order placed.");
+      alert(" Payment Successful! Order placed.");
       navigate("/history");
     }, 1000);
   };

@@ -9,19 +9,19 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import useStyle from "./TodosStyle";
+import { useSelector, useDispatch } from "react-redux";
+import type { AppDispatch, RootState } from "@/Store/Store";
+import { addTodo, deleteTodo, setEditingTodo, updateTodo } from "./TodoSlice";
 
 function Todos() {
   const styles = useStyle();
-
-  interface TodoItem {
-    id: number;
-    name: string;
-    description: string;
-  }
+  const dispatch = useDispatch<AppDispatch>();
+  const { items: todos, editingTodo } = useSelector(
+    (state: RootState) => state.todos
+  );
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -35,64 +35,26 @@ function Todos() {
       .min(5, "Description must be at least 5 characters"),
   });
 
-  const [todos, setTodos] = useState<TodoItem[]>([
-    { id: 1, name: "Buy groceries", description: "Milk, Bread, Eggs, Fruits" },
-    { id: 2, name: "Workout", description: "Morning gym session at 7 AM" },
-    {
-      id: 3,
-      name: "Meeting with client",
-      description: "Project update call at 11 AM",
-    },
-    {
-      id: 4,
-      name: "Read a book",
-      description: 'Read 30 pages of "Atomic Habits"',
-    },
-    {
-      id: 5,
-      name: "Call plumber",
-      description: "Fix the kitchen sink leakage",
-    },
-  ]);
-
-  const [editingTodo, setEditingTodo] = useState<TodoItem | null>(null);
-
   const formik = useFormik({
     initialValues: { name: "", description: "" },
     validationSchema,
     enableReinitialize: true,
     onSubmit: (values, { resetForm }) => {
       if (editingTodo) {
-        setTodos((prev) =>
-          prev.map((todo) =>
-            todo.id === editingTodo.id
-              ? {
-                ...todo,
-                name: values.name.trim(),
-                description: values.description.trim(),
-              }
-              : todo
-          )
-        );
-        setEditingTodo(null);
+        dispatch(updateTodo({ id: editingTodo.id, ...values }));
       } else {
-        const newTodo: TodoItem = {
-          id: todos.length + 1,
-          name: values.name.trim(),
-          description: values.description.trim(),
-        };
-        setTodos([...todos, newTodo]);
+        dispatch(addTodo(values));
       }
       resetForm();
     },
   });
 
   function handleDelete(id: number) {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    dispatch(deleteTodo(id));
   }
 
-  function handleEdit(todo: TodoItem) {
-    setEditingTodo(todo);
+  function handleEdit(todo: { id: number; name: string; description: string }) {
+    dispatch(setEditingTodo(todo));
     formik.setValues({
       name: todo.name,
       description: todo.description,
@@ -103,10 +65,6 @@ function Todos() {
     <div>
       {/* Form */}
       <Box component="form" onSubmit={formik.handleSubmit} sx={styles.formBox}>
-        {/* <Typography variant="h3" sx={styles.title}>
-          Todo Management
-        </Typography> */}
-
         <Stack direction="column" spacing={2}>
           <TextField
             onChange={formik.handleChange}
