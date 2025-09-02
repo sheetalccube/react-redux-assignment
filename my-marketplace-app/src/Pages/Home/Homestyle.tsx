@@ -1,4 +1,3 @@
-// src/Pages/Home/HomeStyle.ts
 import { useTheme } from "@mui/material/styles";
 
 export default function useStyle() {
@@ -15,6 +14,7 @@ export default function useStyle() {
     paper: {
       padding: theme.spacing(4),
       textAlign: "center" as const,
+
       [theme.breakpoints.down("sm")]: {
         padding: theme.spacing(2),
       },

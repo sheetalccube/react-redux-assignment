@@ -5,7 +5,7 @@ import {
   useAddProductMutation,
   useGetProductByIdQuery,
   useUpdateProductMutation,
-} from "../../Api/ProductApi";
+} from "@/Api/ProductApi";
 
 export default function ProductForm() {
   const { id } = useParams<{ id: string }>();

@@ -12,12 +12,12 @@ import { useContext, useState } from "react";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
-} from "../../Api/ProductApi";
+} from "@/Api/ProductApi";
 import useProductListStyle from "./ProductListStyle";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "@/Context/UserContext";
 import ProductImage from "./ProductImage";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Cart/CartSlice";
+import { addToCart } from "@/Pages/Cart/CartSlice";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
@@ -49,7 +49,6 @@ export default function ProductList() {
         </Button>
       )}
 
-      {/* Product Grid */}
       <Grid container spacing={3} justifyContent="center">
         {data?.data?.map((p) => (
           <Grid item key={p.id} xs={12} sm={6} md={4} lg={3}>

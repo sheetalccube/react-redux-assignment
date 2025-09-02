@@ -15,10 +15,12 @@ export default function useProductImageStyle() {
       height: "100%",
       objectFit: "cover" as const,
       borderRadius: 8,
-      display: "block",
     },
     hidden: {
       display: "none",
+    },
+    visible: {
+      display: "block",
     },
   };
 }

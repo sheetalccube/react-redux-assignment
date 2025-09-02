@@ -36,7 +36,7 @@ export default function ProductImage({
         alt={alt}
         style={{
           ...styles.image,
-          display: loading ? "none" : "block",
+          ...(loading ? styles.hidden : styles.visible),
         }}
         onLoad={() => setLoading(false)}
         onError={() => setImgSrc("src/assets/nature.jpg")} // fallback image
