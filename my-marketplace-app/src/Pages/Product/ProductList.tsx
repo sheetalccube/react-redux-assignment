@@ -8,16 +8,16 @@ import {
   Stack,
   Grid,
 } from "@mui/material";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
 } from "@/Api/ProductApi";
 import useProductListStyle from "./ProductListStyle";
-import { UserContext } from "@/Context/UserContext";
 import ProductImage from "./ProductImage";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "@/Pages/Cart/CartSlice";
+import type { RootState } from "@/Store/Store";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
@@ -26,8 +26,10 @@ export default function ProductList() {
   const [deleteProduct] = useDeleteProductMutation();
   const navigate = useNavigate();
   const styles = useProductListStyle();
-  const { userType } = useContext(UserContext);
   const dispatch = useDispatch();
+  const { isAuthenticated, user } = useSelector(
+    (state: RootState) => state.auth
+  );
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -38,7 +40,7 @@ export default function ProductList() {
       <Typography variant="h4" gutterBottom sx={styles.title}>
         Product List
       </Typography>
-      {userType === "admin" && (
+      {isAuthenticated && user?.isAdmin && (
         <Button
           variant="contained"
           color="primary"
@@ -69,7 +71,7 @@ export default function ProductList() {
                   Price: ₹{p.price}
                 </Typography>
                 <Typography sx={styles.description}>{p.description}</Typography>
-                {userType === "admin" && (
+                {isAuthenticated && user?.isAdmin && (
                   <Stack direction="row" spacing={1} sx={styles.actions}>
                     <Button
                       onClick={() => navigate(`/products/${p.id}/edit`)}
@@ -88,13 +90,13 @@ export default function ProductList() {
                     </Button>
                   </Stack>
                 )}
-                {userType !== "admin" && (
+                {!user?.isAdmin && (
                   <Button
                     variant="contained"
                     size="small"
                     sx={{ mt: 2 }}
                     onClick={() => {
-                      if (!userType) {
+                      if (!isAuthenticated) {
                         navigate("/login");
                         return;
                       }

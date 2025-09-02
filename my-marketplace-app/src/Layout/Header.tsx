@@ -9,10 +9,9 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import useHeaderStyle from "./HeaderStyle";
 import { type ThemeMode } from "../Constants/ReusableText";
-import { UserContext } from "../Context/UserContext";
 import { logout } from "../Pages/Auth/AuthSlice";
 import { useDispatch } from "react-redux";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -33,15 +32,12 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
   const { isAuthenticated, user } = useSelector(
     (state: RootState) => state.auth
   );
-  const { setUserType } = useContext(UserContext);
   const isLoggedIn = localStorage.getItem("token");
   const style = useHeaderStyle();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("userType");
-    setUserType("");
     dispatch(logout());
     navigate("/login");
   };

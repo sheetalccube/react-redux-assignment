@@ -11,14 +11,12 @@ import {
 } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { UserContext } from "../../Context/UserContext";
 import { useDispatch } from "react-redux";
 import { login } from "./AuthSlice";
 
 export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const { setUserType } = useContext(UserContext);
   const dispatch = useDispatch();
 
   const validationSchema = Yup.object({
@@ -44,8 +42,6 @@ export default function Login() {
       if (values.username === "admin" && values.password === "1234") {
         const token = "dummy-token-1234567890";
         localStorage.setItem("token", token);
-        localStorage.setItem("userType", "admin");
-        setUserType("admin");
         dispatch(
           login({ user: { name: values.username, isAdmin: true }, token })
         );
@@ -53,7 +49,6 @@ export default function Login() {
       } else if (values.username === "sheetal" && values.password === "1234") {
         const token = "dummy-token-1234567890";
         localStorage.setItem("token", token);
-        localStorage.setItem("userType", "user");
         dispatch(login({ user: { name: values.username }, token }));
         navigate("/");
       } else {
