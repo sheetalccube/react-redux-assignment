@@ -12,7 +12,7 @@ export default function ProductForm() {
   const navigate = useNavigate();
 
   const { data: existingProduct } = useGetProductByIdQuery(Number(id), {
-    skip: !id, // Skip fetching if creating new
+    skip: !id,
   });
 
   const [addProduct] = useAddProductMutation();
