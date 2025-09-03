@@ -12,7 +12,7 @@ import {
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { login } from "./AuthSlice";
+import { login } from "@/Services/AuthSlice";
 
 export default function Login() {
   const navigate = useNavigate();

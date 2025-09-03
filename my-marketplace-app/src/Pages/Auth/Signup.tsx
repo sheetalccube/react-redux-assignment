@@ -34,7 +34,6 @@ const validationSchema = Yup.object({
 });
 
 export default function SignupForm() {
-  // Step 2: Formik setup
   const formik = useFormik({
     initialValues: {
       firstName: "",

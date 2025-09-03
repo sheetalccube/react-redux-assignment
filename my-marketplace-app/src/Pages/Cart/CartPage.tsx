@@ -8,10 +8,10 @@ import {
 } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/Store/Store";
-import { clearCart, removeFromCart } from "./CartSlice";
-import { addOrder } from "../Order/OrderSlice";
+import { clearCart, removeFromCart } from "@/Services/CartSlice";
+import { addOrder } from "@/Services/OrderSlice";
 import { useNavigate } from "react-router-dom";
-import ProductImage from "../Product/ProductImage";
+import ProductImage from "@/Pages/Product/ProductImage";
 
 export default function CartPage() {
   const navigate = useNavigate();

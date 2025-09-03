@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { productApi } from "@/Api/ProductApi";
-import AuthSlice from "@/Pages/Auth/AuthSlice";
-import cartReducer from "@/Pages/Cart/CartSlice";
-import orderReducer from "@/Pages/Order/OrderSlice";
-import todosReducer from "@/Pages/Todo/TodoSlice";
+import { productApi } from "@/Services/ProductApi";
+import AuthSlice from "@/Services/AuthSlice";
+import cartReducer from "@/Services/CartSlice";
+import orderReducer from "@/Services/OrderSlice";
+import todosReducer from "@/Services/TodoSlice";
 export const store = configureStore({
   reducer: {
     auth: AuthSlice,

@@ -10,9 +10,9 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import useHeaderStyle from "./HeaderStyle";
-import { type ThemeMode } from "../Constants/ReusableText";
-import { logout } from "../Pages/Auth/AuthSlice";
+import useHeaderStyle from "@/Layout/HeaderStyle";
+import { type ThemeMode } from "@/Constants/ReusableText";
+import { logout } from "@/Services/AuthSlice";
 import { useDispatch } from "react-redux";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";

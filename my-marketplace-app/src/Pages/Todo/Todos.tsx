@@ -14,7 +14,12 @@ import * as Yup from "yup";
 import useStyle from "./TodosStyle";
 import { useSelector, useDispatch } from "react-redux";
 import type { AppDispatch, RootState } from "@/Store/Store";
-import { addTodo, deleteTodo, setEditingTodo, updateTodo } from "./TodoSlice";
+import {
+  addTodo,
+  deleteTodo,
+  setEditingTodo,
+  updateTodo,
+} from "@/Services/TodoSlice";
 
 function Todos() {
   const styles = useStyle();

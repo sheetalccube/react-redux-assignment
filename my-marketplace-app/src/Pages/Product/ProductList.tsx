@@ -12,11 +12,11 @@ import { useState } from "react";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
-} from "@/Api/ProductApi";
-import useProductListStyle from "./ProductListStyle";
-import ProductImage from "./ProductImage";
+} from "@/Services/ProductApi";
+import useProductListStyle from "@/Pages/Product/ProductListStyle";
+import ProductImage from "@/Pages/Product/ProductImage";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "@/Pages/Cart/CartSlice";
+import { addToCart } from "@/Services/CartSlice";
 import type { RootState } from "@/Store/Store";
 
 export default function ProductList() {

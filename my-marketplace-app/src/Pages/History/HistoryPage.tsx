@@ -8,7 +8,7 @@ import {
   Divider,
 } from "@mui/material";
 import type { RootState } from "@/Store/Store";
-import ProductImage from "../Product/ProductImage";
+import ProductImage from "@/Pages/Product/ProductImage";
 
 export default function HistoryPage() {
   const orders = useSelector((state: RootState) => state.order.history);
