@@ -1,4 +1,4 @@
-import type { ApiResponse, Product } from "@/Types/commonTypes";
+import type { ApiResponse, Product } from "@/Types/CommonTypes";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const productApi = createApi({

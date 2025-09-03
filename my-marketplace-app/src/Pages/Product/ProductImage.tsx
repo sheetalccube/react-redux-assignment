@@ -39,7 +39,7 @@ export default function ProductImage({
           ...(loading ? styles.hidden : styles.visible),
         }}
         onLoad={() => setLoading(false)}
-        onError={() => setImgSrc("src/assets/nature.jpg")} // fallback image
+        onError={() => setImgSrc("src/assets/nature.jpg")}
       />
     </Box>
   );

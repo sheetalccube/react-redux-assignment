@@ -1,4 +1,4 @@
-import type { TodoItem, TodosState } from "@/Types/commonTypes";
+import type { TodoItem, TodosState } from "@/Types/CommonTypes";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: TodosState = {

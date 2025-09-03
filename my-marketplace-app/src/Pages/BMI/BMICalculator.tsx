@@ -12,7 +12,7 @@ import {
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./BMICalculator.module.css";
-import type { BMIState } from "@/Types/commonTypes";
+import type { BMIState } from "@/Types/CommonTypes";
 
 const validationSchema = Yup.object().shape({
   weight: Yup.number()

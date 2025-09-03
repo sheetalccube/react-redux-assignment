@@ -19,7 +19,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "@/Store/Store";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import PersonIcon from "@mui/icons-material/Person";
-import type { HeaderProps } from "@/Types/commonTypes";
+import type { HeaderProps } from "@/Types/CommonTypes";
 
 function Header({ mode, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();
@@ -54,15 +54,7 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
             <MenuIcon />
           </IconButton>
 
-          {/* Desktop links */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
-            {/* <NavLink
-              to="/"
-              end
-              style={({ isActive }) => style.navLink(isActive)}
-            >
-              Home
-            </NavLink> */}
             <NavLink
               to="/products"
               style={({ isActive }) => style.navLink(isActive)}
