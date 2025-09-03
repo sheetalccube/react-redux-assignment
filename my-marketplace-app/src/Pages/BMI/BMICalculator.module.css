@@ -1,0 +1,58 @@
+.container {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.paper {
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.inputGroup {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.bmiValue {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.category {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.infoBox {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.infoTitle {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.infoList {
+  padding-left: 1rem;
+}

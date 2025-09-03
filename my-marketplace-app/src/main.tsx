@@ -14,6 +14,7 @@ const ProductList = lazy(() => import("@/Pages/Product/ProductList"));
 const ProductForm = lazy(() => import("@/Pages/Product/ProductForm"));
 const CartPage = lazy(() => import("@/Pages/Cart/CartPage"));
 const HistoryPage = lazy(() => import("@/Pages/History/HistoryPage"));
+const BMICalculatorPage = lazy(() => import("@/Pages/BMI/BMICalculator"));
 
 import withAuth from "@/Hoc/WithAuth";
 import { store } from "@/Store/Store";
@@ -46,6 +47,7 @@ function MainApp() {
                 <Route path="/products/new" element={<ProductForm />} />
                 <Route path="/cart" element={<ProtectedCart />} />
                 <Route path="/history" element={<HistoryPage />} />
+                <Route path="/bmi" element={<BMICalculatorPage />} />
 
                 <Route path="*" element={<div>404 - Page Not Found</div>} />
               </Route>

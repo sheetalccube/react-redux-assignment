@@ -81,6 +81,13 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
             >
               Todos
             </NavLink>
+            <NavLink
+              to="/bmi"
+              style={({ isActive }) => style.navLink(isActive)}
+            >
+              BMI Calculator
+            </NavLink>
+
             {isAuthenticated && !user?.isAdmin && (
               <NavLink
                 to="/history"
