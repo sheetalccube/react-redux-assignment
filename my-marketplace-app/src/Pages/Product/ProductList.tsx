@@ -7,6 +7,11 @@ import {
   Box,
   Stack,
   Grid,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@mui/material";
 import { useState } from "react";
 import {
@@ -31,9 +36,31 @@ export default function ProductList() {
     (state: RootState) => state.auth
   );
 
+  const [openDialog, setOpenDialog] = useState(false);
+  const [productIdToDelete, setProductIdToDelete] = useState<number | null>(
+    null
+  );
+
   if (isLoading) return <p>Loading...</p>;
 
   const totalPages = Math.ceil((data?.total || 0) / limit);
+  const handleDeleteClick = (id: number) => {
+    setProductIdToDelete(id);
+    setOpenDialog(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (productIdToDelete !== null) {
+      deleteProduct(productIdToDelete);
+    }
+    setOpenDialog(false);
+    setProductIdToDelete(null);
+  };
+
+  const handleCancelDelete = () => {
+    setOpenDialog(false);
+    setProductIdToDelete(null);
+  };
 
   return (
     <Box sx={styles.root}>
@@ -63,7 +90,6 @@ export default function ProductList() {
                     variant="list"
                   />
                 </Box>
-
                 <Typography variant="h6" mt={2}>
                   {p.name}
                 </Typography>
@@ -84,7 +110,7 @@ export default function ProductList() {
                       color="error"
                       variant="outlined"
                       size="small"
-                      onClick={() => deleteProduct(p.id!)}
+                      onClick={() => handleDeleteClick(p.id!)}
                     >
                       Delete
                     </Button>
@@ -100,7 +126,6 @@ export default function ProductList() {
                         navigate("/login");
                         return;
                       }
-
                       dispatch(
                         addToCart({
                           id: p.id,
@@ -139,6 +164,24 @@ export default function ProductList() {
           Next
         </Button>
       </Stack>
+
+      <Dialog open={openDialog} onClose={handleCancelDelete}>
+        <DialogTitle>Confirm Deletion</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to delete this product? This action cannot be
+            undone.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancelDelete} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleConfirmDelete} color="error" autoFocus>
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }

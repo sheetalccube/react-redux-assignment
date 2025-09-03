@@ -8,6 +8,11 @@ import {
   ListItem,
   ListItemText,
   Typography,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
 } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -20,6 +25,7 @@ import {
   setEditingTodo,
   updateTodo,
 } from "@/Services/TodoSlice";
+import { useState } from "react";
 
 function Todos() {
   const styles = useStyle();
@@ -27,6 +33,8 @@ function Todos() {
   const { items: todos, editingTodo } = useSelector(
     (state: RootState) => state.todos
   );
+  const [openDialog, setOpenDialog] = useState(false);
+  const [todoIdToDelete, setTodoIdToDelete] = useState<number | null>(null);
 
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -54,8 +62,22 @@ function Todos() {
     },
   });
 
-  function handleDelete(id: number) {
-    dispatch(deleteTodo(id));
+  function handleDeleteClick(id: number) {
+    setTodoIdToDelete(id);
+    setOpenDialog(true);
+  }
+
+  function handleConfirmDelete() {
+    if (todoIdToDelete !== null) {
+      dispatch(deleteTodo(todoIdToDelete));
+    }
+    setOpenDialog(false);
+    setTodoIdToDelete(null);
+  }
+
+  function handleCancelDelete() {
+    setOpenDialog(false);
+    setTodoIdToDelete(null);
   }
 
   function handleEdit(todo: { id: number; name: string; description: string }) {
@@ -137,7 +159,7 @@ function Todos() {
                         variant="outlined"
                         color="error"
                         size="small"
-                        onClick={() => handleDelete(todo.id)}
+                        onClick={() => handleDeleteClick(todo.id)}
                       >
                         Delete
                       </Button>
@@ -162,6 +184,24 @@ function Todos() {
           No todos added yet. Add one above.
         </Typography>
       )}
+
+      <Dialog open={openDialog} onClose={handleCancelDelete}>
+        <DialogTitle>Confirm Deletion</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Are you sure you want to delete this todo? This action cannot be
+            undone.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancelDelete} color="primary">
+            Cancel
+          </Button>
+          <Button onClick={handleConfirmDelete} color="error" autoFocus>
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </div>
   );
 }
