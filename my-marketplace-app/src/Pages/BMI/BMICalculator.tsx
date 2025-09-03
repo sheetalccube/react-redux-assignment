@@ -12,6 +12,7 @@ import {
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import styles from "./BMICalculator.module.css";
+import type { BMIState } from "@/Types/commonTypes";
 
 const validationSchema = Yup.object().shape({
   weight: Yup.number()
@@ -28,11 +29,6 @@ const initialValues = {
   weight: "",
   height: "",
 };
-
-interface BMIState {
-  bmi: number | null;
-  category: string;
-}
 
 class BMICalculator extends React.Component<object, BMIState> {
   constructor(props: object) {

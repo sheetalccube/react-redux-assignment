@@ -11,7 +11,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import useHeaderStyle from "@/Layout/HeaderStyle";
-import { type ThemeMode } from "@/Constants/ReusableText";
 import { logout } from "@/Services/AuthSlice";
 import { useDispatch } from "react-redux";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -20,11 +19,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "@/Store/Store";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import PersonIcon from "@mui/icons-material/Person";
-
-interface HeaderProps {
-  mode: ThemeMode;
-  onToggleTheme: () => void;
-}
+import type { HeaderProps } from "@/Types/commonTypes";
 
 function Header({ mode, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();
