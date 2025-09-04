@@ -13,11 +13,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { login } from "@/Services/AuthSlice";
+import useLoginStyle from "./LoginStyle";
 
 export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const dispatch = useDispatch();
+  const style = useLoginStyle();
 
   const validationSchema = Yup.object({
     username: Yup.string()
@@ -58,12 +60,7 @@ export default function Login() {
   });
 
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      minHeight="90vh"
-      alignItems="center"
-    >
+    <Box sx={style.container}>
       <Card>
         <CardContent>
           <Typography variant="h5" component="h2" gutterBottom align="center">
@@ -71,7 +68,7 @@ export default function Login() {
           </Typography>
 
           {error && (
-            <Alert severity="error" sx={{ mb: 2 }}>
+            <Alert severity="error" sx={style.errorAlert}>
               {error}
             </Alert>
           )}
@@ -88,7 +85,7 @@ export default function Login() {
               onBlur={formik.handleBlur}
               error={formik.touched.username && Boolean(formik.errors.username)}
               helperText={formik.touched.username && formik.errors.username}
-              sx={{ mb: 2 }}
+              sx={style.inputField}
             />
             <TextField
               fullWidth
@@ -102,7 +99,7 @@ export default function Login() {
               onBlur={formik.handleBlur}
               error={formik.touched.password && Boolean(formik.errors.password)}
               helperText={formik.touched.password && formik.errors.password}
-              sx={{ mb: 2 }}
+              sx={style.inputField}
             />
 
             <Button
@@ -110,7 +107,7 @@ export default function Login() {
               type="submit"
               variant="contained"
               color="primary"
-              sx={{ py: 1.2 }}
+              sx={style.submitButton}
               disabled={!formik.isValid || !formik.dirty}
             >
               Login

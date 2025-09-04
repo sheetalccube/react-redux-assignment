@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import useSignupStyle from "./SignupStyle";
 
 const validationSchema = Yup.object({
   firstName: Yup.string()
@@ -51,17 +52,15 @@ export default function SignupForm() {
     },
   });
 
+  const style = useSignupStyle();
+
   return (
-    <Container maxWidth="sm" sx={{ mt: 6 }}>
-      <Paper sx={{ p: 4 }}>
+    <Container maxWidth="sm" sx={style.container}>
+      <Paper sx={style.paper}>
         <Typography variant="h4" align="center" gutterBottom>
           Sign Up
         </Typography>
-        <Typography
-          variant="body2"
-          align="center"
-          sx={{ mb: 3, color: "text.secondary" }}
-        >
+        <Typography variant="body2" align="center" sx={style.subText}>
           Fill in the form to create your account
         </Typography>
 
@@ -164,7 +163,7 @@ export default function SignupForm() {
             type="submit"
             variant="contained"
             fullWidth
-            sx={{ mt: 2, py: 1.2 }}
+            sx={style.submitButton}
             disabled={!(formik.isValid && formik.dirty)}
           >
             Sign Up

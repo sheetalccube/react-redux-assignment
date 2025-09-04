@@ -4,6 +4,7 @@ import AuthSlice from "@/Services/AuthSlice";
 import cartReducer from "@/Services/CartSlice";
 import orderReducer from "@/Services/OrderSlice";
 import todosReducer from "@/Services/TodoSlice";
+
 export const store = configureStore({
   reducer: {
     auth: AuthSlice,

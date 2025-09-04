@@ -12,12 +12,20 @@ import { clearCart, removeFromCart } from "@/Services/CartSlice";
 import { addOrder } from "@/Services/OrderSlice";
 import { useNavigate } from "react-router-dom";
 import ProductImage from "@/Pages/Product/ProductImage";
+import useCartPageStyle from "./CartPageStyle";
 
 export default function CartPage() {
   const navigate = useNavigate();
+  const styles = useCartPageStyle();
 
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
+
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+
   const handleCheckout = () => {
     setTimeout(() => {
       const order = {
@@ -34,21 +42,16 @@ export default function CartPage() {
     }, 1000);
   };
 
-  const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
-    0
-  );
-
   if (cartItems.length === 0) {
     return (
-      <Box p={3}>
+      <Box sx={styles.emptyBox}>
         <Typography variant="h5">Your cart is empty 🛒</Typography>
       </Box>
     );
   }
 
   return (
-    <Box p={3}>
+    <Box sx={styles.root}>
       <Typography variant="h4" gutterBottom>
         Your Cart
       </Typography>
@@ -59,7 +62,7 @@ export default function CartPage() {
             <CardContent>
               <Stack direction="row" spacing={2} alignItems="center">
                 <ProductImage src={item.image} alt={item.name} variant="cart" />
-                <Box flexGrow={1}>
+                <Box sx={styles.itemInfo}>
                   <Typography variant="h6">{item.name}</Typography>
                   <Typography color="text.secondary">
                     ₹{item.price} × {item.quantity} = ₹
@@ -79,12 +82,12 @@ export default function CartPage() {
         ))}
       </Stack>
 
-      <Box mt={3}>
+      <Box sx={styles.checkoutBox}>
         <Typography variant="h6">Total: ₹{totalPrice}</Typography>
         <Button
           variant="contained"
           color="primary"
-          sx={{ mt: 2 }}
+          sx={styles.checkoutButton}
           onClick={handleCheckout}
         >
           Checkout

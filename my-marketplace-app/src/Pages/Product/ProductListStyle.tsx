@@ -18,14 +18,14 @@ export default function useProductListStyle() {
       justifyContent: "space-between",
       overflow: "hidden",
     },
-    image: {
-      width: "100%",
-      height: 150,
-      objectFit: "cover" as const,
-      borderRadius: 8,
+    cardContent: {
+      flexGrow: 1,
     },
-    actions: {
-      mt: "auto",
+    imageBox: {
+      textAlign: "center",
+    },
+    productName: {
+      mt: 2,
     },
     pagination: {
       mt: 4,
@@ -41,6 +41,16 @@ export default function useProductListStyle() {
       WebkitBoxOrient: "vertical",
       overflow: "hidden",
       textOverflow: "ellipsis",
+    },
+    actions: {
+      mt: "auto",
+    },
+    addCartBtn: {
+      mt: 2,
+    },
+    pagination: {
+      mt: 4,
+      justifyContent: "center",
     },
   };
 }

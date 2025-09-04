@@ -6,20 +6,19 @@ import {
   IconButton,
   Drawer,
   Tooltip,
+  Badge,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import useHeaderStyle from "@/Layout/HeaderStyle";
-import { logout } from "@/Services/AuthSlice";
-import { useDispatch } from "react-redux";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Badge } from "@mui/material";
-import { useSelector } from "react-redux";
-import type { RootState } from "@/Store/Store";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import PersonIcon from "@mui/icons-material/Person";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "@/Services/AuthSlice";
+import type { RootState } from "@/Store/Store";
 import type { HeaderProps } from "@/Types/CommonTypes";
+import useHeaderStyle from "@/Layout/HeaderStyle";
 
 function Header({ mode, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();
@@ -27,6 +26,8 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
   const { isAuthenticated, user } = useSelector(
     (state: RootState) => state.auth
   );
+  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const isLoggedIn = localStorage.getItem("token");
   const style = useHeaderStyle();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,8 +37,6 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
     dispatch(logout());
     navigate("/login");
   };
-  const cartItems = useSelector((state: RootState) => state.cart.items);
-  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const toggleDrawer = () => setMobileOpen((prev) => !prev);
 
@@ -48,20 +47,19 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
           <IconButton
             color="inherit"
             edge="start"
-            sx={{ display: { xs: "flex", md: "none" } }}
+            sx={style.mobileMenuIcon}
             onClick={toggleDrawer}
           >
             <MenuIcon />
           </IconButton>
 
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
+          <Box sx={style.desktopNav}>
             <NavLink
               to="/products"
               style={({ isActive }) => style.navLink(isActive)}
             >
               Products
             </NavLink>
-
             <NavLink
               to="/todos"
               style={({ isActive }) => style.navLink(isActive)}
@@ -74,7 +72,6 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
             >
               BMI Calculator
             </NavLink>
-
             {isAuthenticated && !user?.isAdmin && (
               <NavLink
                 to="/history"
@@ -85,15 +82,16 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
             )}
           </Box>
 
-          <Box flexGrow={1} />
+          <Box sx={style.flexGrow} />
           <Button
             variant="outlined"
             color="inherit"
             onClick={onToggleTheme}
-            sx={{ mr: 2, display: { xs: "none", md: "inline-flex" } }}
+            sx={style.themeToggleBtn}
           >
             {mode === "light" ? "Dark Mode" : "Light Mode"}
           </Button>
+
           {isAuthenticated && !user?.isAdmin && (
             <IconButton color="inherit" onClick={() => navigate("/cart")}>
               <Badge badgeContent={cartCount} color="error">
@@ -101,24 +99,26 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
               </Badge>
             </IconButton>
           )}
+
           {isAuthenticated && user && (
             <Tooltip title={user.isAdmin ? "Admin" : "User"}>
-              <IconButton color="inherit" sx={{ mr: 2 }}>
+              <IconButton color="inherit" sx={style.userIconBtn}>
                 {user.isAdmin ? <AdminPanelSettingsIcon /> : <PersonIcon />}
               </IconButton>
             </Tooltip>
           )}
+
           {isAuthenticated ? (
             <Button
               variant="outlined"
               color="inherit"
               onClick={handleLogout}
-              sx={{ display: { xs: "none", md: "inline-flex" } }}
+              sx={style.logoutBtn}
             >
               Logout
             </Button>
           ) : (
-            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
+            <Box sx={style.authBox}>
               <Button
                 variant="outlined"
                 color="inherit"
@@ -143,7 +143,7 @@ function Header({ mode, onToggleTheme }: HeaderProps) {
         anchor="left"
         open={mobileOpen}
         onClose={toggleDrawer}
-        sx={{ display: { xs: "block", md: "none" } }}
+        sx={style.mobileDrawer}
       >
         <Box sx={style.drawerBox} onClick={toggleDrawer}>
           <NavLink

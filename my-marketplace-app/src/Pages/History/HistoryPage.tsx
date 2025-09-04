@@ -9,20 +9,22 @@ import {
 } from "@mui/material";
 import type { RootState } from "@/Store/Store";
 import ProductImage from "@/Pages/Product/ProductImage";
+import useHistoryPageStyle from "./HistoryPageStyle";
 
 export default function HistoryPage() {
   const orders = useSelector((state: RootState) => state.order.history);
+  const styles = useHistoryPageStyle();
 
   if (orders.length === 0) {
     return (
-      <Box p={3}>
+      <Box sx={styles.emptyBox}>
         <Typography variant="h5">No orders yet !!!!</Typography>
       </Box>
     );
   }
 
   return (
-    <Box p={3}>
+    <Box sx={styles.root}>
       <Typography variant="h4" gutterBottom>
         Order History
       </Typography>
@@ -34,7 +36,7 @@ export default function HistoryPage() {
               <Typography variant="body2" color="text.secondary">
                 {order.date}
               </Typography>
-              <Divider sx={{ my: 1 }} />
+              <Divider sx={styles.divider} />
 
               {order.items.map((item) => (
                 <Stack
@@ -42,14 +44,14 @@ export default function HistoryPage() {
                   direction="row"
                   spacing={2}
                   alignItems="center"
-                  sx={{ mb: 1 }}
+                  sx={styles.itemStack}
                 >
                   <ProductImage
                     src={item.image}
                     alt={item.name}
                     variant="history"
                   />
-                  <Box flexGrow={1}>
+                  <Box sx={styles.itemInfo}>
                     <Typography>{item.name}</Typography>
                     <Typography variant="body2" color="text.secondary">
                       ₹{item.price} × {item.quantity} = ₹
@@ -59,7 +61,7 @@ export default function HistoryPage() {
                 </Stack>
               ))}
 
-              <Divider sx={{ my: 1 }} />
+              <Divider sx={styles.divider} />
               <Typography variant="h6">Total: ₹{order.total}</Typography>
             </CardContent>
           </Card>

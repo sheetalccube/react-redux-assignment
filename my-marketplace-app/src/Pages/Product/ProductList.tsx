@@ -82,15 +82,15 @@ export default function ProductList() {
         {data?.data?.map((p) => (
           <Grid item key={p.id} xs={12} sm={6} md={4} lg={3}>
             <Card sx={styles.card}>
-              <CardContent sx={{ flexGrow: 1 }}>
-                <Box sx={{ textAlign: "center" }}>
+              <CardContent sx={styles.cardContent}>
+                <Box sx={styles.imageBox}>
                   <ProductImage
                     src={p.image || "src/assets/nature.jpg"}
                     alt={p.name}
                     variant="list"
                   />
                 </Box>
-                <Typography variant="h6" mt={2}>
+                <Typography variant="h6" sx={styles.productName}>
                   {p.name}
                 </Typography>
                 <Typography color="text.secondary">
@@ -120,7 +120,7 @@ export default function ProductList() {
                   <Button
                     variant="contained"
                     size="small"
-                    sx={{ mt: 2 }}
+                    sx={styles.addCartBtn}
                     onClick={() => {
                       if (!isAuthenticated) {
                         navigate("/login");
