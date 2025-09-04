@@ -77,8 +77,7 @@ export default function ProductList() {
           Add Product
         </Button>
       )}
-
-      <Grid container spacing={3} justifyContent="center">
+      <Grid container spacing={3} justifyContent="center" alignItems="stretch">
         {data?.data?.map((p) => (
           <Grid item key={p.id} xs={12} sm={6} md={4} lg={3}>
             <Card sx={styles.card}>

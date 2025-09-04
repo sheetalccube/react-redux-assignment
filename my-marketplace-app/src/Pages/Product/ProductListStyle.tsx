@@ -11,15 +11,17 @@ export default function useProductListStyle() {
       mb: 3,
     },
     card: {
-      height: 350,
       width: 250,
       display: "flex",
       flexDirection: "column",
-      justifyContent: "space-between",
-      overflow: "hidden",
+      minHeight: 200,
+      height: "100%",
     },
     cardContent: {
-      flexGrow: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+      height: "100%",
     },
     imageBox: {
       textAlign: "center",
@@ -33,15 +35,12 @@ export default function useProductListStyle() {
     },
     description: {
       mt: 1,
-      whiteSpace: "normal",
-      wordBreak: "break-word",
-      overflowWrap: "break-word",
+      fontSize: "14px",
       display: "-webkit-box",
-      WebkitLineClamp: 2,
+      WebkitLineClamp: 5,
       WebkitBoxOrient: "vertical",
       overflow: "hidden",
       textOverflow: "ellipsis",
-      fontSize: "14px", // 👈 add this
     },
     actions: {
       mt: 2,

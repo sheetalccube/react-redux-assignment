@@ -6,7 +6,7 @@
       "price": 58,
       "image": "https://picsum.photos/200/140?random=1",
       "category": "Electronics",
-      "description": "A compact electronic gadget designed for everyday convenience."
+      "description": "A compact electronic gadget designed for everyday convenience.A compact electronic gadget designed for everyday convenience.A compact electronic gadget designed for everyday convenience."
     },
     {
       "id": "2",
@@ -102,7 +102,7 @@
       "price": 691,
       "image": "https://picsum.photos/200/140?random=13",
       "category": "Books",
-      "description": "An inspiring book filled with thought-provoking content."
+      "description": "An inspiring book filled with thought-provoking content.An inspiring book filled with thought-provoking content."
     },
     {
       "id": "14",
@@ -142,7 +142,7 @@
       "price": 365,
       "image": "https://picsum.photos/200/140?random=18",
       "category": "Books",
-      "description": "A thought-provoking read that leaves a lasting impact."
+      "description": "A thought-provoking read that leaves a lasting impact.A thought-provoking read that leaves a lasting impact.A thought-provoking read that leaves a lasting impact."
     },
     {
       "id": "19",
