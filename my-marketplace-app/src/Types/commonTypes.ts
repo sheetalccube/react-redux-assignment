@@ -1,13 +1,17 @@
 import { type THEME_MODE } from "@/Constants/ReusableText";
 
+/* ---------- Global App / Layout ---------- */
 export interface HeaderProps {
   mode: THEME_MODE;
   onToggleTheme: () => void;
 }
-export interface BMIState {
-  bmi: number | null;
-  category: string;
+
+export interface AppProps {
+  mode: THEME_MODE;
+  onToggleTheme: () => void;
 }
+
+/* ---------- Auth ---------- */
 export interface User {
   name: string;
   age?: number;
@@ -20,6 +24,7 @@ export interface AuthState {
   token: string | null;
 }
 
+/* ---------- Products ---------- */
 export interface Product {
   id?: number;
   name: string;
@@ -28,6 +33,7 @@ export interface Product {
   category: string;
   description: string;
 }
+
 export interface ApiResponse {
   data: Product[];
   first: number;
@@ -38,6 +44,7 @@ export interface ApiResponse {
   items: number;
 }
 
+/* ---------- Todos ---------- */
 export interface TodoItem {
   id: number;
   name: string;
@@ -49,7 +56,38 @@ export interface TodosState {
   editingTodo: TodoItem | null;
 }
 
-export interface AppProps {
-  mode: THEME_MODE; // "dark" | "light"
+/* ---------- BMI ---------- */
+export interface BMIState {
+  bmi: number | null;
+  category: string;
+}
+
+/* ---------- Header Subcomponents ---------- */
+export interface DesktopNavProps {
+  isAuthenticated: boolean;
+  user: User | null;
+}
+
+export interface MobileDrawerProps {
+  open: boolean;
+  onClose: () => void;
+  isAuthenticated: boolean;
+  isLoggedIn: boolean;
   onToggleTheme: () => void;
+  mode: THEME_MODE;
+  handleLogout: () => void;
+}
+
+export interface AuthButtonsProps {
+  isAuthenticated: boolean;
+  onLogout: () => void;
+  navigate: (path: string) => void;
+}
+
+export interface UserBadgeProps {
+  isAuthenticated: boolean;
+  user: User | null;
+  onToggleTheme: () => void;
+  mode: THEME_MODE;
+  navigate: (path: string) => void;
 }

@@ -1,0 +1,30 @@
+import { Box } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import useHeaderStyle from "./HeaderStyle";
+import type { DesktopNavProps } from "@/Types/CommonTypes";
+
+export default function DesktopNav({ isAuthenticated, user }: DesktopNavProps) {
+  const style = useHeaderStyle();
+
+  return (
+    <Box sx={style.desktopNav}>
+      <NavLink to="/products" style={({ isActive }) => style.navLink(isActive)}>
+        Products
+      </NavLink>
+      <NavLink to="/todos" style={({ isActive }) => style.navLink(isActive)}>
+        Todos
+      </NavLink>
+      <NavLink to="/bmi" style={({ isActive }) => style.navLink(isActive)}>
+        BMI Calculator
+      </NavLink>
+      {isAuthenticated && !user?.isAdmin && (
+        <NavLink
+          to="/history"
+          style={({ isActive }) => style.navLink(isActive)}
+        >
+          History
+        </NavLink>
+      )}
+    </Box>
+  );
+}
