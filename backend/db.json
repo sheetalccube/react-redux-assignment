@@ -6,7 +6,7 @@
       "price": 58,
       "image": "https://picsum.photos/200/140?random=1",
       "category": "Electronics",
-      "description": "This is a description for Product 1. It is a high-quality electronic item."
+      "description": "A compact electronic gadget designed for everyday convenience."
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "price": 330,
       "image": "https://picsum.photos/200/140?random=2",
       "category": "Books",
-      "description": "This is a description for Product 2. It is a high-quality book item."
+      "description": "An engaging book filled with insightful knowledge and creativity."
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "price": 330,
       "image": "https://picsum.photos/200/140?random=3",
       "category": "Books",
-      "description": "This is a description for Product 3. It is a high-quality book item."
+      "description": "A captivating novel that offers hours of immersive reading."
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "price": 764,
       "image": "https://picsum.photos/200/140?random=4",
       "category": "Toys",
-      "description": "This is a description for Product 4. It is a high-quality toy item."
+      "description": "A fun and durable toy that sparks creativity in children."
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "price": 421,
       "image": "https://picsum.photos/200/140?random=5",
       "category": "Home",
-      "description": "This is a description for Product 5. It is a high-quality home item."
+      "description": "A stylish home essential that adds comfort and elegance."
     },
     {
       "id": "6",
@@ -46,7 +46,7 @@
       "price": 678,
       "image": "https://picsum.photos/200/140?random=6",
       "category": "Electronics",
-      "description": "This is a description for Product 6. It is a high-quality electronic item."
+      "description": "A high-performance device built to enhance your lifestyle."
     },
     {
       "id": "7",
@@ -54,7 +54,7 @@
       "price": 245,
       "image": "https://picsum.photos/200/140?random=7",
       "category": "Clothing",
-      "description": "This is a description for Product 7. It is a high-quality clothing item."
+      "description": "A trendy clothing piece offering both comfort and style."
     },
     {
       "id": "8",
@@ -62,7 +62,7 @@
       "price": 991,
       "image": "https://picsum.photos/200/140?random=8",
       "category": "Books",
-      "description": "This is a description for Product 8. It is a high-quality book item."
+      "description": "A premium edition book perfect for collectors and readers alike."
     },
     {
       "id": "9",
@@ -70,7 +70,7 @@
       "price": 512,
       "image": "https://picsum.photos/200/140?random=9",
       "category": "Toys",
-      "description": "This is a description for Product 9. It is a high-quality toy item."
+      "description": "An exciting toy designed to bring joy and entertainment."
     },
     {
       "id": "10",
@@ -78,7 +78,7 @@
       "price": 330,
       "image": "https://picsum.photos/200/140?random=10",
       "category": "Home",
-      "description": "This is a description for Product 10. It is a high-quality home item."
+      "description": "A practical home product that makes daily tasks easier."
     },
     {
       "id": "11",
@@ -86,7 +86,7 @@
       "price": 874,
       "image": "https://picsum.photos/200/140?random=11",
       "category": "Electronics",
-      "description": "This is a description for Product 11. It is a high-quality electronic item."
+      "description": "A modern electronic accessory built for speed and reliability."
     },
     {
       "id": "12",
@@ -94,7 +94,7 @@
       "price": 415,
       "image": "https://picsum.photos/200/140?random=12",
       "category": "Clothing",
-      "description": "This is a description for Product 12. It is a high-quality clothing item."
+      "description": "A fashionable outfit crafted from high-quality materials."
     },
     {
       "id": "13",
@@ -102,7 +102,7 @@
       "price": 691,
       "image": "https://picsum.photos/200/140?random=13",
       "category": "Books",
-      "description": "This is a description for Product 13. It is a high-quality book item."
+      "description": "An inspiring book filled with thought-provoking content."
     },
     {
       "id": "14",
@@ -110,7 +110,7 @@
       "price": 230,
       "image": "https://picsum.photos/200/140?random=14",
       "category": "Toys",
-      "description": "This is a description for Product 14. It is a high-quality toy item."
+      "description": "A playful toy that encourages learning through fun."
     },
     {
       "id": "15",
@@ -118,7 +118,7 @@
       "price": 849,
       "image": "https://picsum.photos/200/140?random=15",
       "category": "Home",
-      "description": "This is a description for Product 15. It is a high-quality home item."
+      "description": "A premium-quality home item that adds a touch of luxury."
     },
     {
       "id": "16",
@@ -126,7 +126,7 @@
       "price": 432,
       "image": "https://picsum.photos/200/140?random=16",
       "category": "Electronics",
-      "description": "This is a description for Product 16. It is a high-quality electronic item."
+      "description": "An innovative electronic device with advanced features."
     },
     {
       "id": "17",
@@ -134,7 +134,7 @@
       "price": 712,
       "image": "https://picsum.photos/200/140?random=17",
       "category": "Clothing",
-      "description": "This is a description for Product 17. It is a high-quality clothing item."
+      "description": "A stylish wardrobe essential perfect for any occasion."
     },
     {
       "id": "18",
@@ -142,7 +142,7 @@
       "price": 365,
       "image": "https://picsum.photos/200/140?random=18",
       "category": "Books",
-      "description": "This is a description for Product 18. It is a high-quality book item."
+      "description": "A thought-provoking read that leaves a lasting impact."
     },
     {
       "id": "19",
@@ -150,7 +150,7 @@
       "price": 998,
       "image": "https://picsum.photos/200/140?random=19",
       "category": "Toys",
-      "description": "This is a description for Product 19. It is a high-quality toy item."
+      "description": "A premium toy designed for endless fun and imagination."
     },
     {
       "id": "20",
@@ -158,7 +158,7 @@
       "price": 521,
       "image": "https://picsum.photos/200/140?random=20",
       "category": "Home",
-      "description": "This is a description for Product 20. It is a high-quality home item."
+      "description": "A reliable home accessory built to last for years."
     },
     {
       "id": "21",
@@ -166,7 +166,7 @@
       "price": 780,
       "image": "https://picsum.photos/200/140?random=21",
       "category": "Electronics",
-      "description": "This is a description for Product 21. It is a high-quality electronic item."
+      "description": "A sleek electronic gadget blending design with performance."
     },
     {
       "id": "22",
@@ -174,7 +174,7 @@
       "price": 412,
       "image": "https://picsum.photos/200/140?random=22",
       "category": "Clothing",
-      "description": "This is a description for Product 22. It is a high-quality clothing item."
+      "description": "A comfortable clothing piece that fits any casual style."
     },
     {
       "id": "23",
@@ -182,7 +182,7 @@
       "price": 635,
       "image": "https://picsum.photos/200/140?random=23",
       "category": "Books",
-      "description": "This is a description for Product 23. It is a high-quality book item."
+      "description": "A detailed book offering practical insights and wisdom."
     },
     {
       "id": "24",
@@ -190,7 +190,7 @@
       "price": 297,
       "image": "https://picsum.photos/200/140?random=24",
       "category": "Toys",
-      "description": "This is a description for Product 24. It is a high-quality toy item."
+      "description": "A colorful toy that guarantees hours of entertainment."
     },
     {
       "id": "25",
@@ -198,7 +198,7 @@
       "price": 855,
       "image": "https://picsum.photos/200/140?random=25",
       "category": "Home",
-      "description": "This is a description for Product 25. It is a high-quality home item."
+      "description": "An elegant home décor item that enhances any space."
     },
     {
       "id": "26",
@@ -206,7 +206,7 @@
       "price": 490,
       "image": "https://picsum.photos/200/140?random=26",
       "category": "Electronics",
-      "description": "This is a description for Product 26. It is a high-quality electronic item."
+      "description": "A reliable electronic product with versatile functions."
     },
     {
       "id": "27",
@@ -214,7 +214,7 @@
       "price": 611,
       "image": "https://picsum.photos/200/140?random=27",
       "category": "Clothing",
-      "description": "This is a description for Product 27. It is a high-quality clothing item."
+      "description": "A modern clothing design tailored for a perfect fit."
     },
     {
       "id": "28",
@@ -222,7 +222,7 @@
       "price": 378,
       "image": "https://picsum.photos/200/140?random=28",
       "category": "Books",
-      "description": "This is a description for Product 28. It is a high-quality book item."
+      "description": "A well-written book that combines knowledge and fun."
     },
     {
       "id": "29",
@@ -230,7 +230,7 @@
       "price": 921,
       "image": "https://picsum.photos/200/140?random=29",
       "category": "Toys",
-      "description": "This is a description for Product 29. It is a high-quality toy item."
+      "description": "A premium-quality toy built for safety and excitement."
     },
     {
       "id": "30",
@@ -238,7 +238,7 @@
       "price": 534,
       "image": "https://picsum.photos/200/140?random=30",
       "category": "Home",
-      "description": "This is a description for Product 30. It is a high-quality home item."
+      "description": "A versatile home product that combines function with style."
     },
     {
       "id": "4c63",
@@ -246,7 +246,7 @@
       "price": "789",
       "image": "",
       "category": "",
-      "description": ""
+      "description": "Custom product entry created by Sheetal."
     }
   ]
 }
