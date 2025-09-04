@@ -1,7 +1,7 @@
-import { type ThemeMode } from "@/Constants/ReusableText";
+import { type THEME_MODE } from "@/Constants/ReusableText";
 
 export interface HeaderProps {
-  mode: ThemeMode;
+  mode: THEME_MODE;
   onToggleTheme: () => void;
 }
 export interface BMIState {
@@ -50,6 +50,6 @@ export interface TodosState {
 }
 
 export interface AppProps {
-  mode: ThemeMode; // "dark" | "light"
+  mode: THEME_MODE; // "dark" | "light"
   onToggleTheme: () => void;
 }

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
 import App from "./App";
-import { type ThemeMode, THEME } from "./Constants/ReusableText";
+import { type THEME_MODE, THEME } from "./Constants/ReusableText";
 import { getTheme } from "@/Styles/Theme";
 import { Provider } from "react-redux";
 
@@ -20,7 +20,7 @@ import withAuth from "@/Hoc/WithAuth";
 import { store } from "@/Store/Store";
 
 function MainApp() {
-  const [mode, setMode] = useState<ThemeMode>(THEME.Light);
+  const [mode, setMode] = useState<THEME_MODE>(THEME.Light);
   const toggleTheme = () =>
     setMode(mode === THEME.Light ? THEME.Dark : THEME.Light);
 
