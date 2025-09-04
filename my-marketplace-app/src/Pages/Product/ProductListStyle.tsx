@@ -41,16 +41,13 @@ export default function useProductListStyle() {
       WebkitBoxOrient: "vertical",
       overflow: "hidden",
       textOverflow: "ellipsis",
+      fontSize: "14px", // 👈 add this
     },
     actions: {
-      mt: "auto",
+      mt: 2,
     },
     addCartBtn: {
       mt: 2,
-    },
-    pagination: {
-      mt: 4,
-      justifyContent: "center",
     },
   };
 }
