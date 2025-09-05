@@ -5,7 +5,17 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import PersonIcon from "@mui/icons-material/Person";
-import type { UserBadgeProps } from "@/Types/CommonTypes";
+import type { User } from "@/Services/AuthSlice";
+
+import { type THEME_MODE } from "@/Constants/ReusableText";
+
+export interface UserBadgeProps {
+  isAuthenticated: boolean;
+  user: User | null;
+  onToggleTheme: () => void;
+  mode: THEME_MODE;
+  navigate: (path: string) => void;
+}
 
 export default function UserBadge({
   isAuthenticated,

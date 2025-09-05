@@ -6,11 +6,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/Services/AuthSlice";
 import type { RootState } from "@/Store/Store";
 import useHeaderStyle from "./HeaderStyle";
-import type { HeaderProps } from "@/Types/CommonTypes";
 import DesktopNav from "./DesktopNav";
 import UserBadge from "./UserBadge";
 import AuthButtons from "./AuthButtons";
 import MobileDrawer from "./MobileDrawer";
+import { type THEME_MODE } from "@/Constants/ReusableText";
+
+export interface HeaderProps {
+  mode: THEME_MODE;
+  onToggleTheme: () => void;
+}
+
 
 export default function Header({ mode, onToggleTheme }: HeaderProps) {
   const navigate = useNavigate();

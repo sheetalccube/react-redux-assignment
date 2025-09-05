@@ -1,5 +1,16 @@
-import type { TodoItem, TodosState } from "@/Types/CommonTypes";
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+
+export interface TodoItem {
+  id: number;
+  name: string;
+  description: string;
+}
+
+export interface TodosState {
+  items: TodoItem[];
+  editingTodo: TodoItem | null;
+}
+
 
 const initialState: TodosState = {
   items: [

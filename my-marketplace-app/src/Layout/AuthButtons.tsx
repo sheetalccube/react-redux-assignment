@@ -1,6 +1,11 @@
-import type { AuthButtonsProps } from "@/Types/CommonTypes";
 import { Button, Box } from "@mui/material";
 import useHeaderStyle from "./HeaderStyle";
+export interface AuthButtonsProps {
+  isAuthenticated: boolean;
+  onLogout: () => void;
+  navigate: (path: string) => void;
+}
+
 
 export default function AuthButtons({
   isAuthenticated,

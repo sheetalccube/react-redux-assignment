@@ -22,10 +22,11 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "baseUrl": "./src",
+    "types": ["node"],
+    "baseUrl": "./src", // 👈 this is the key change
     "paths": {
-      "@/*": ["*"]
-    }
+      "@/*": ["*"]       // 👈 now relative to src
+    },
   },
-  "include": ["src"]
+  "include": ["./src"]
 }

@@ -1,7 +1,12 @@
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import Header from "./Layout/Header";
-import type { AppProps } from "./Types/CommonTypes";
+import { type THEME_MODE } from "@/Constants/ReusableText";
+
+export interface AppProps {
+  mode: THEME_MODE;
+  onToggleTheme: () => void;
+}
 
 export default function App({ mode, onToggleTheme }: AppProps) {
   return (

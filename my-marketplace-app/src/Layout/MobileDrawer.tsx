@@ -1,7 +1,18 @@
 import { Drawer, Box, Button } from "@mui/material";
 import { NavLink, useNavigate } from "react-router-dom";
 import useHeaderStyle from "./HeaderStyle";
-import type { MobileDrawerProps } from "@/Types/CommonTypes";
+import type { THEME_MODE } from "@/Constants/ReusableText";
+
+
+export interface MobileDrawerProps {
+  open: boolean;
+  onClose: () => void;
+  isAuthenticated: boolean;
+  isLoggedIn: boolean;
+  onToggleTheme: () => void;
+  mode: THEME_MODE;
+  handleLogout: () => void;
+}
 
 export default function MobileDrawer({
   open,
