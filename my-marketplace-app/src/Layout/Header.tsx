@@ -38,7 +38,6 @@ export default function Header({ mode, onToggleTheme }: HeaderProps) {
     <Box>
       <AppBar position="static" color="primary">
         <Toolbar sx={style.toolbar}>
-          {/* Mobile menu icon  */}
           <IconButton
             color="inherit"
             edge="start"
@@ -48,12 +47,10 @@ export default function Header({ mode, onToggleTheme }: HeaderProps) {
             <MenuIcon />
           </IconButton>
 
-          {/* Desktop navigation */}
           <DesktopNav isAuthenticated={isAuthenticated} user={user} />
 
           <Box flexGrow={1} />
 
-          {/* Auth + Cart + Theme */}
           <UserBadge
             isAuthenticated={isAuthenticated}
             user={user}
@@ -69,7 +66,6 @@ export default function Header({ mode, onToggleTheme }: HeaderProps) {
         </Toolbar>
       </AppBar>
 
-      {/* Mobile Drawer */}
       <MobileDrawer
         open={mobileOpen}
         onClose={toggleDrawer}

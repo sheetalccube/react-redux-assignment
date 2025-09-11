@@ -23,7 +23,6 @@ export default function useHeaderStyle() {
     }),
     drawerButton: { justifyContent: "flex-start", color: "inherit" },
 
-    // ✅ Added Auth-related styles
     authLogoutButton: { display: { xs: "none", md: "inline-flex" } },
     authBox: { display: { xs: "none", md: "flex" }, gap: 1 },
   };
