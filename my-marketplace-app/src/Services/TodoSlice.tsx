@@ -1,4 +1,4 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
 
 export interface TodoItem {
   id: number;
@@ -11,11 +11,10 @@ export interface TodosState {
   editingTodo: TodoItem | null;
 }
 
-
 const initialState: TodosState = {
   items: [
-    { id: 1, name: "Buy groceries", description: "Milk, Bread, Eggs, Fruits" },
-    { id: 2, name: "Workout", description: "Morning gym session at 7 AM" },
+    {id: 1, name: "Buy groceries", description: "Milk, Bread, Eggs, Fruits"},
+    {id: 2, name: "Workout", description: "Morning gym session at 7 AM"},
     {
       id: 3,
       name: "Meeting with client",
@@ -41,7 +40,7 @@ const todosSlice = createSlice({
   reducers: {
     addTodo: (
       state,
-      action: PayloadAction<{ name: string; description: string }>
+      action: PayloadAction<{name: string; description: string}>
     ) => {
       const newTodo: TodoItem = {
         id: state.items.length + 1,
@@ -52,11 +51,11 @@ const todosSlice = createSlice({
     },
     updateTodo: (
       state,
-      action: PayloadAction<{ id: number; name: string; description: string }>
+      action: PayloadAction<{id: number; name: string; description: string}>
     ) => {
       const index = state.items.findIndex((t) => t.id === action.payload.id);
       if (index !== -1) {
-        state.items[index] = { ...state.items[index], ...action.payload };
+        state.items[index] = {...state.items[index], ...action.payload};
       }
       state.editingTodo = null;
     },
@@ -69,6 +68,6 @@ const todosSlice = createSlice({
   },
 });
 
-export const { addTodo, updateTodo, deleteTodo, setEditingTodo } =
+export const {addTodo, updateTodo, deleteTodo, setEditingTodo} =
   todosSlice.actions;
 export default todosSlice.reducer;

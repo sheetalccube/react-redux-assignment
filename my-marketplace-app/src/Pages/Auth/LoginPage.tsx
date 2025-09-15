@@ -13,13 +13,13 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { login } from "@/Services/AuthSlice";
-import useLoginStyle from "./LoginStyle";
+import useStyle from "./LoginStyle";
 
 export default function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const dispatch = useDispatch();
-  const style = useLoginStyle();
+  const style = useStyle();
 
   const validationSchema = Yup.object({
     username: Yup.string()
@@ -27,7 +27,7 @@ export default function Login() {
       .min(3, "Username must be at least 3 characters")
       .matches(
         /^[a-zA-Z0-9]+$/,
-        "Username should only contain letters and numbers"
+        "Username should only contain letters and numbers",
       ),
     password: Yup.string()
       .required("Password is required")
@@ -45,7 +45,7 @@ export default function Login() {
         const token = "dummy-token-1234567890";
         localStorage.setItem("token", token);
         dispatch(
-          login({ user: { name: values.username, isAdmin: true }, token })
+          login({ user: { name: values.username, isAdmin: true }, token }),
         );
         navigate("/");
       } else if (values.username === "sheetal" && values.password === "1234") {

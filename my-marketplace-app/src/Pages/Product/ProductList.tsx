@@ -33,12 +33,12 @@ export default function ProductList() {
   const styles = useProductListStyle();
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector(
-    (state: RootState) => state.auth
+    (state: RootState) => state.auth,
   );
 
   const [openDialog, setOpenDialog] = useState(false);
   const [productIdToDelete, setProductIdToDelete] = useState<number | null>(
-    null
+    null,
   );
 
   if (isLoading) return <p>Loading...</p>;
@@ -131,7 +131,7 @@ export default function ProductList() {
                           name: p.name,
                           price: p.price,
                           image: p.image,
-                        })
+                        }),
                       );
                     }}
                   >

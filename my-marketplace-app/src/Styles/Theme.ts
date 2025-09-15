@@ -11,25 +11,25 @@ export function getTheme(mode: THEME_MODE) {
       },
       ...(mode === THEME.Dark
         ? {
-          text: {
-            primary: COLORS.DARK.TEXT_PRIMARY,
-            secondary: COLORS.DARK.TEXT_SECONDARY,
-          },
-          background: {
-            default: COLORS.DARK.BACKGROUND,
-            paper: COLORS.DARK.PAPER,
-          },
-        }
+            text: {
+              primary: COLORS.DARK.TEXT_PRIMARY,
+              secondary: COLORS.DARK.TEXT_SECONDARY,
+            },
+            background: {
+              default: COLORS.DARK.BACKGROUND,
+              paper: COLORS.DARK.PAPER,
+            },
+          }
         : {
-          text: {
-            primary: COLORS.LIGHT.TEXT_PRIMARY,
-            secondary: COLORS.LIGHT.TEXT_SECONDARY,
-          },
-          background: {
-            default: COLORS.LIGHT.BACKGROUND,
-            paper: COLORS.LIGHT.PAPER,
-          },
-        }),
+            text: {
+              primary: COLORS.LIGHT.TEXT_PRIMARY,
+              secondary: COLORS.LIGHT.TEXT_SECONDARY,
+            },
+            background: {
+              default: COLORS.LIGHT.BACKGROUND,
+              paper: COLORS.LIGHT.PAPER,
+            },
+          }),
     },
   });
 }

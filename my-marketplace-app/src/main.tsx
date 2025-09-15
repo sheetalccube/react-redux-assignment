@@ -1,11 +1,11 @@
-import React, { lazy, useState } from "react";
+import React, {lazy, useState} from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider, CssBaseline, Box } from "@mui/material";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {ThemeProvider, CssBaseline, Box} from "@mui/material";
 import App from "./App";
-import { type THEME_MODE, THEME } from "./Constants/CoomonText";
-import { getTheme } from "@/Styles/Theme";
-import { Provider } from "react-redux";
+import {type THEME_MODE, THEME} from "./Constants/CoomonText";
+import {getTheme} from "@/Styles/Theme";
+import {Provider} from "react-redux";
 
 const LoginPage = lazy(() => import("@/Pages/Auth/LoginPage"));
 const SignupPage = lazy(() => import("@/Pages/Auth/Signup"));
@@ -16,7 +16,7 @@ const CartPage = lazy(() => import("@/Pages/Cart/CartPage"));
 const HistoryPage = lazy(() => import("@/Pages/History/HistoryPage"));
 
 import withAuth from "@/Hoc/WithAuth";
-import { store } from "@/Store/Store";
+import {store} from "@/Store/Store";
 
 function MainApp() {
   const [mode, setMode] = useState<THEME_MODE>(THEME.Light);
@@ -30,7 +30,7 @@ function MainApp() {
     <ThemeProvider theme={getTheme(mode)}>
       <CssBaseline />
       <BrowserRouter>
-        <Box sx={{ p: 2 }}>
+        <Box sx={{p: 2}}>
           <React.Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route

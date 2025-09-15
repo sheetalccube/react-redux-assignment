@@ -23,7 +23,7 @@ export default function CartPage() {
 
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0
+    0,
   );
 
   const handleCheckout = () => {

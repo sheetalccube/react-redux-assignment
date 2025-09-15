@@ -3,7 +3,6 @@ import { NavLink, useNavigate } from "react-router-dom";
 import useHeaderStyle from "./HeaderStyle";
 import type { THEME_MODE } from "@/Constants/CoomonText";
 
-
 export interface MobileDrawerProps {
   open: boolean;
   onClose: () => void;

@@ -31,7 +31,7 @@ function Todos() {
   const styles = useStyle();
   const dispatch = useDispatch<AppDispatch>();
   const { items: todos, editingTodo } = useSelector(
-    (state: RootState) => state.todos
+    (state: RootState) => state.todos,
   );
   const [openDialog, setOpenDialog] = useState(false);
   const [todoIdToDelete, setTodoIdToDelete] = useState<number | null>(null);

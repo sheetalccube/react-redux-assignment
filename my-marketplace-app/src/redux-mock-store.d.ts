@@ -1,5 +1,5 @@
-declare module 'redux-mock-store' {
-  import { AnyAction, Middleware, Store } from 'redux';
+declare module "redux-mock-store" {
+  import { AnyAction, Middleware, Store } from "redux";
 
   interface MockStore<TState = unknown> extends Store<TState> {
     getActions(): AnyAction[];
@@ -7,7 +7,7 @@ declare module 'redux-mock-store' {
   }
 
   function configureStore<TState = unknown>(
-    middlewares?: Middleware[]
+    middlewares?: Middleware[],
   ): (initialState?: TState) => MockStore<TState>;
 
   export default configureStore;

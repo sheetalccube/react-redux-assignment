@@ -16,7 +16,6 @@ export interface User {
   isAdmin?: boolean;
 }
 
-
 const AuthSlice = createSlice({
   name: "auth",
   initialState,

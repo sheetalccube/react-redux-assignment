@@ -13,7 +13,11 @@ describe("todosSlice", () => {
   beforeEach(() => {
     initialState = {
       items: [
-        { id: 1, name: "Buy groceries", description: "Milk, Bread, Eggs, Fruits" },
+        {
+          id: 1,
+          name: "Buy groceries",
+          description: "Milk, Bread, Eggs, Fruits",
+        },
         { id: 2, name: "Workout", description: "Morning gym session at 7 AM" },
       ],
       editingTodo: null,
