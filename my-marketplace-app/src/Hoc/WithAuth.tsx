@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import type { RootState } from "@/Store/Store";
+import React, {useEffect, useState} from "react";
+import {Navigate} from "react-router-dom";
+import {useSelector} from "react-redux";
+import type {RootState} from "@/Store/Store";
 import useStyle from "./AuthStyle";
 function withAuth<P extends object>(Component: React.ComponentType<P>) {
   function AuthenticatedComponent(props: P) {
-    const { isAuthenticated } = useSelector((state: RootState) => state.auth);
+    const {isAuthenticated} = useSelector((state: RootState) => state.auth);
     const [countdown, setCountdown] = useState(5);
     const [redirect, setRedirect] = useState(false);
     const style = useStyle();

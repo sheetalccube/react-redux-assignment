@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import {
   Box,
   Button,
@@ -9,10 +9,10 @@ import {
   Typography,
   Alert,
 } from "@mui/material";
-import { useFormik } from "formik";
+import {useFormik} from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { login } from "@/Services/AuthSlice";
+import {useDispatch} from "react-redux";
+import {login} from "@/Services/AuthSlice";
 import useStyle from "./LoginStyle";
 
 export default function Login() {
@@ -27,7 +27,7 @@ export default function Login() {
       .min(3, "Username must be at least 3 characters")
       .matches(
         /^[a-zA-Z0-9]+$/,
-        "Username should only contain letters and numbers",
+        "Username should only contain letters and numbers"
       ),
     password: Yup.string()
       .required("Password is required")
@@ -44,14 +44,12 @@ export default function Login() {
       if (values.username === "admin" && values.password === "1234") {
         const token = "dummy-token-1234567890";
         localStorage.setItem("token", token);
-        dispatch(
-          login({ user: { name: values.username, isAdmin: true }, token }),
-        );
+        dispatch(login({user: {name: values.username, isAdmin: true}, token}));
         navigate("/");
       } else if (values.username === "sheetal" && values.password === "1234") {
         const token = "dummy-token-1234567890";
         localStorage.setItem("token", token);
-        dispatch(login({ user: { name: values.username }, token }));
+        dispatch(login({user: {name: values.username}, token}));
         navigate("/");
       } else {
         setError("Invalid username or password.");

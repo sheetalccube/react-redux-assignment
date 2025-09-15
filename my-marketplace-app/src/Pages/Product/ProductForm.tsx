@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { TextField, Button, Box, Typography } from "@mui/material";
-import { useParams, useNavigate } from "react-router-dom";
+import {useState, useEffect} from "react";
+import {TextField, Button, Box, Typography} from "@mui/material";
+import {useParams, useNavigate} from "react-router-dom";
 import {
   useAddProductMutation,
   useGetProductByIdQuery,
@@ -8,10 +8,10 @@ import {
 } from "@/Services/ProductApi";
 
 export default function ProductForm() {
-  const { id } = useParams<{ id: string }>();
+  const {id} = useParams<{id: string}>();
   const navigate = useNavigate();
 
-  const { data: existingProduct } = useGetProductByIdQuery(Number(id), {
+  const {data: existingProduct} = useGetProductByIdQuery(Number(id), {
     skip: !id,
   });
 
@@ -31,20 +31,20 @@ export default function ProductForm() {
   }, [existingProduct]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, files } = e.target;
+    const {name, value, files} = e.target;
     if (name === "image" && files?.[0]) {
       const fileReader = new FileReader();
       fileReader.onload = () =>
-        setForm((prev) => ({ ...prev, image: fileReader.result as string }));
+        setForm((prev) => ({...prev, image: fileReader.result as string}));
       fileReader.readAsDataURL(files[0]);
     } else {
-      setForm((prev) => ({ ...prev, [name]: value }));
+      setForm((prev) => ({...prev, [name]: value}));
     }
   };
 
   const handleSubmit = async () => {
     if (id) {
-      await updateProduct({ id: Number(id), ...form });
+      await updateProduct({id: Number(id), ...form});
     } else {
       await addProduct(form);
     }
@@ -76,7 +76,7 @@ export default function ProductForm() {
         onChange={handleChange}
       />
 
-      <Button variant="outlined" component="label" fullWidth sx={{ mt: 2 }}>
+      <Button variant="outlined" component="label" fullWidth sx={{mt: 2}}>
         Upload Image
         <input type="file" name="image" hidden onChange={handleChange} />
       </Button>
@@ -91,7 +91,7 @@ export default function ProductForm() {
         variant="contained"
         color="primary"
         fullWidth
-        sx={{ mt: 3 }}
+        sx={{mt: 3}}
         onClick={handleSubmit}
       >
         {id ? "Update" : "Create"}

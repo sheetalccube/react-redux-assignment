@@ -22,11 +22,11 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": ["node","jest","@testing-library/jest-dom"],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "baseUrl": "./src", // 👈 this is the key change
     "paths": {
-      "@/*": ["*"]       // 👈 now relative to src
-    },
+      "@/*": ["*"] // 👈 now relative to src
+    }
   },
   "include": ["./src"]
 }

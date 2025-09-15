@@ -6,7 +6,7 @@ import {
   TextField,
   Button,
 } from "@mui/material";
-import { useFormik } from "formik";
+import {useFormik} from "formik";
 import * as Yup from "yup";
 import useSignupStyle from "./SignupStyle";
 

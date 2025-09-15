@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {
   Button,
   Card,
@@ -13,32 +13,30 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
-import { useState } from "react";
+import {useState} from "react";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
 } from "@/Services/ProductApi";
 import useProductListStyle from "@/Pages/Product/ProductListStyle";
 import ProductImage from "@/Pages/Product/ProductImage";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "@/Services/CartSlice";
-import type { RootState } from "@/Store/Store";
+import {useDispatch, useSelector} from "react-redux";
+import {addToCart} from "@/Services/CartSlice";
+import type {RootState} from "@/Store/Store";
 
 export default function ProductList() {
   const [page, setPage] = useState(1);
   const limit = 10;
-  const { data, isLoading } = useGetProductsQuery({ page, limit });
+  const {data, isLoading} = useGetProductsQuery({page, limit});
   const [deleteProduct] = useDeleteProductMutation();
   const navigate = useNavigate();
   const styles = useProductListStyle();
   const dispatch = useDispatch();
-  const { isAuthenticated, user } = useSelector(
-    (state: RootState) => state.auth,
-  );
+  const {isAuthenticated, user} = useSelector((state: RootState) => state.auth);
 
   const [openDialog, setOpenDialog] = useState(false);
   const [productIdToDelete, setProductIdToDelete] = useState<number | null>(
-    null,
+    null
   );
 
   if (isLoading) return <p>Loading...</p>;
@@ -131,7 +129,7 @@ export default function ProductList() {
                           name: p.name,
                           price: p.price,
                           image: p.image,
-                        }),
+                        })
                       );
                     }}
                   >

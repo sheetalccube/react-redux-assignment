@@ -1,16 +1,9 @@
-import {
-  Box,
-  Typography,
-  Button,
-  Card,
-  CardContent,
-  Stack,
-} from "@mui/material";
-import { useSelector, useDispatch } from "react-redux";
-import type { RootState } from "@/Store/Store";
-import { clearCart, removeFromCart } from "@/Services/CartSlice";
-import { addOrder } from "@/Services/OrderSlice";
-import { useNavigate } from "react-router-dom";
+import {Box, Typography, Button, Card, CardContent, Stack} from "@mui/material";
+import {useSelector, useDispatch} from "react-redux";
+import type {RootState} from "@/Store/Store";
+import {clearCart, removeFromCart} from "@/Services/CartSlice";
+import {addOrder} from "@/Services/OrderSlice";
+import {useNavigate} from "react-router-dom";
 import ProductImage from "@/Pages/Product/ProductImage";
 import useCartPageStyle from "./CartPageStyle";
 
@@ -23,7 +16,7 @@ export default function CartPage() {
 
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0,
+    0
   );
 
   const handleCheckout = () => {

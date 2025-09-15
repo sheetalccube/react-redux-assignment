@@ -14,24 +14,24 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
-import { useFormik } from "formik";
+import {useFormik} from "formik";
 import * as Yup from "yup";
 import useStyle from "./TodosStyle";
-import { useSelector, useDispatch } from "react-redux";
-import type { AppDispatch, RootState } from "@/Store/Store";
+import {useSelector, useDispatch} from "react-redux";
+import type {AppDispatch, RootState} from "@/Store/Store";
 import {
   addTodo,
   deleteTodo,
   setEditingTodo,
   updateTodo,
 } from "@/Services/TodoSlice";
-import { useState } from "react";
+import {useState} from "react";
 
 function Todos() {
   const styles = useStyle();
   const dispatch = useDispatch<AppDispatch>();
-  const { items: todos, editingTodo } = useSelector(
-    (state: RootState) => state.todos,
+  const {items: todos, editingTodo} = useSelector(
+    (state: RootState) => state.todos
   );
   const [openDialog, setOpenDialog] = useState(false);
   const [todoIdToDelete, setTodoIdToDelete] = useState<number | null>(null);
@@ -49,12 +49,12 @@ function Todos() {
   });
 
   const formik = useFormik({
-    initialValues: { name: "", description: "" },
+    initialValues: {name: "", description: ""},
     validationSchema,
     enableReinitialize: true,
-    onSubmit: (values, { resetForm }) => {
+    onSubmit: (values, {resetForm}) => {
       if (editingTodo) {
-        dispatch(updateTodo({ id: editingTodo.id, ...values }));
+        dispatch(updateTodo({id: editingTodo.id, ...values}));
       } else {
         dispatch(addTodo(values));
       }
@@ -80,7 +80,7 @@ function Todos() {
     setTodoIdToDelete(null);
   }
 
-  function handleEdit(todo: { id: number; name: string; description: string }) {
+  function handleEdit(todo: {id: number; name: string; description: string}) {
     dispatch(setEditingTodo(todo));
     formik.setValues({
       name: todo.name,
@@ -168,7 +168,7 @@ function Todos() {
                 >
                   <ListItemText
                     primary={`${todo.id}. ${todo.name}`}
-                    primaryTypographyProps={{ sx: styles.listItemTextPrimary }}
+                    primaryTypographyProps={{sx: styles.listItemTextPrimary}}
                     secondary={todo.description}
                     secondaryTypographyProps={{
                       sx: styles.listItemTextSecondary,

@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 import {
   Box,
   Typography,
@@ -7,7 +7,7 @@ import {
   Stack,
   Divider,
 } from "@mui/material";
-import type { RootState } from "@/Store/Store";
+import type {RootState} from "@/Store/Store";
 import ProductImage from "@/Pages/Product/ProductImage";
 import useHistoryPageStyle from "./HistoryPageStyle";
 

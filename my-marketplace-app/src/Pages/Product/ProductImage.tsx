@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { CircularProgress, Box } from "@mui/material";
+import {useState} from "react";
+import {CircularProgress, Box} from "@mui/material";
 import useProductImageStyle from "./ProductImageStyle";
 
 type ProductImageProps = {
@@ -9,9 +9,9 @@ type ProductImageProps = {
 };
 
 const sizeMap = {
-  list: { height: 140, width: "100%" },
-  cart: { height: 50, width: 50 },
-  history: { height: 40, width: 40 },
+  list: {height: 140, width: "100%"},
+  cart: {height: 50, width: 50},
+  history: {height: 40, width: 40},
 };
 
 export default function ProductImage({
@@ -22,10 +22,10 @@ export default function ProductImage({
   const [loading, setLoading] = useState(true);
   const [imgSrc, setImgSrc] = useState(src);
   const styles = useProductImageStyle();
-  const { height, width } = sizeMap[variant];
+  const {height, width} = sizeMap[variant];
 
   return (
-    <Box sx={{ ...styles.root, height, width }}>
+    <Box sx={{...styles.root, height, width}}>
       {loading && (
         <Box sx={styles.loader}>
           <CircularProgress size={20} />

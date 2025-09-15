@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 export interface ApiResponse {
   data: Product[];
   first: number;
@@ -20,14 +20,14 @@ export interface Product {
 
 export const productApi = createApi({
   reducerPath: "productApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/" }),
+  baseQuery: fetchBaseQuery({baseUrl: "http://localhost:3000/"}),
   tagTypes: ["Product"],
   endpoints: (builder) => ({
     getProducts: builder.query<
-      { data: Product[]; total: number },
-      { page: number; limit: number }
+      {data: Product[]; total: number},
+      {page: number; limit: number}
     >({
-      query: ({ page, limit }) => `products?_page=${page}&_per_page=${limit}`,
+      query: ({page, limit}) => `products?_page=${page}&_per_page=${limit}`,
       transformResponse: (response: ApiResponse) => {
         return {
           data: response.data,
@@ -51,7 +51,7 @@ export const productApi = createApi({
     }),
 
     updateProduct: builder.mutation<Product, Product>({
-      query: ({ id, ...rest }) => ({
+      query: ({id, ...rest}) => ({
         url: `products/${id}`,
         method: "PUT",
         body: rest,

@@ -1,7 +1,7 @@
-import { Drawer, Box, Button } from "@mui/material";
-import { NavLink, useNavigate } from "react-router-dom";
+import {Drawer, Box, Button} from "@mui/material";
+import {NavLink, useNavigate} from "react-router-dom";
 import useHeaderStyle from "./HeaderStyle";
-import type { THEME_MODE } from "@/Constants/CoomonText";
+import type {THEME_MODE} from "@/Constants/CoomonText";
 
 export interface MobileDrawerProps {
   open: boolean;
@@ -28,26 +28,19 @@ export default function MobileDrawer({
   return (
     <Drawer anchor="left" open={open} onClose={onClose} sx={style.mobileDrawer}>
       <Box sx={style.drawerBox} onClick={onClose}>
-        <NavLink
-          to="/"
-          end
-          style={({ isActive }) => style.drawerLink(isActive)}
-        >
+        <NavLink to="/" end style={({isActive}) => style.drawerLink(isActive)}>
           <Button fullWidth sx={style.drawerButton}>
             Home
           </Button>
         </NavLink>
-        <NavLink
-          to="/todos"
-          style={({ isActive }) => style.drawerLink(isActive)}
-        >
+        <NavLink to="/todos" style={({isActive}) => style.drawerLink(isActive)}>
           <Button fullWidth sx={style.drawerButton}>
             Todos
           </Button>
         </NavLink>
         <NavLink
           to="/products"
-          style={({ isActive }) => style.drawerLink(isActive)}
+          style={({isActive}) => style.drawerLink(isActive)}
         >
           <Button fullWidth sx={style.drawerButton}>
             Products
@@ -56,7 +49,7 @@ export default function MobileDrawer({
         {isAuthenticated && (
           <NavLink
             to="/history"
-            style={({ isActive }) => style.drawerLink(isActive)}
+            style={({isActive}) => style.drawerLink(isActive)}
           >
             <Button fullWidth sx={style.drawerButton}>
               History

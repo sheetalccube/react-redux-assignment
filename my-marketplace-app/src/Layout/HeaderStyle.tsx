@@ -1,8 +1,8 @@
 export default function useHeaderStyle() {
   return {
-    toolbar: { gap: 3 },
-    mobileMenuButton: { display: { xs: "flex", md: "none" } },
-    desktopNav: { display: { xs: "none", md: "flex" }, gap: 3 },
+    toolbar: {gap: 3},
+    mobileMenuButton: {display: {xs: "flex", md: "none"}},
+    desktopNav: {display: {xs: "none", md: "flex"}, gap: 3},
     navLink: (isActive: boolean) => ({
       color: "inherit",
       textDecoration: "none",
@@ -10,7 +10,7 @@ export default function useHeaderStyle() {
       borderBottom: isActive ? "2px solid yellow" : "none",
       paddingBottom: "2px",
     }),
-    mobileDrawer: { display: { xs: "block", md: "none" } },
+    mobileDrawer: {display: {xs: "block", md: "none"}},
     drawerBox: {
       width: 250,
       display: "flex",
@@ -21,9 +21,9 @@ export default function useHeaderStyle() {
       textDecoration: "none",
       fontWeight: isActive ? 700 : 500,
     }),
-    drawerButton: { justifyContent: "flex-start", color: "inherit" },
+    drawerButton: {justifyContent: "flex-start", color: "inherit"},
 
-    authLogoutButton: { display: { xs: "none", md: "inline-flex" } },
-    authBox: { display: { xs: "none", md: "flex" }, gap: 1 },
+    authLogoutButton: {display: {xs: "none", md: "inline-flex"}},
+    authBox: {display: {xs: "none", md: "flex"}, gap: 1},
   };
 }

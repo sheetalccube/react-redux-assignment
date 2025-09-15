@@ -1,5 +1,5 @@
-import { Outlet } from "react-router-dom";
-import { Box, Typography, Container, Paper } from "@mui/material";
+import {Outlet} from "react-router-dom";
+import {Box, Typography, Container, Paper} from "@mui/material";
 import useStyle from "./Homestyle";
 
 function Home() {

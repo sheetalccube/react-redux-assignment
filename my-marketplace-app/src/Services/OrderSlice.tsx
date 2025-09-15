@@ -1,5 +1,5 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { CartItem } from "./CartSlice";
+import {createSlice, type PayloadAction} from "@reduxjs/toolkit";
+import type {CartItem} from "./CartSlice";
 
 export type Order = {
   id: string;
@@ -26,5 +26,5 @@ const orderSlice = createSlice({
   },
 });
 
-export const { addOrder } = orderSlice.actions;
+export const {addOrder} = orderSlice.actions;
 export default orderSlice.reducer;
