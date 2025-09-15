@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 import { COLORS } from "@/Styles/Colors";
-import { type THEME_MODE, THEME } from "@/Constants/ReusableText";
+import { type THEME_MODE, THEME } from "@/Constants/CoomonText";
 
 export function getTheme(mode: THEME_MODE) {
   return createTheme({

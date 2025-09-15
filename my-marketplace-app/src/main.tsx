@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, CssBaseline, Box } from "@mui/material";
 import App from "./App";
-import { type THEME_MODE, THEME } from "./Constants/ReusableText";
+import { type THEME_MODE, THEME } from "./Constants/CoomonText";
 import { getTheme } from "@/Styles/Theme";
 import { Provider } from "react-redux";
 

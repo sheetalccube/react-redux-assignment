@@ -7,7 +7,7 @@ import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import PersonIcon from "@mui/icons-material/Person";
 import type { User } from "@/Services/AuthSlice";
 
-import { type THEME_MODE } from "@/Constants/ReusableText";
+import { type THEME_MODE } from "@/Constants/CoomonText";
 
 export interface UserBadgeProps {
   isAuthenticated: boolean;

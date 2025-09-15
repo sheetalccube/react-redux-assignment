@@ -9,8 +9,11 @@ import useHeaderStyle from "./HeaderStyle";
 import DesktopNav from "./DesktopNav";
 import UserBadge from "./UserBadge";
 import AuthButtons from "./AuthButtons";
+
+
+
 import MobileDrawer from "./MobileDrawer";
-import { type THEME_MODE } from "@/Constants/ReusableText";
+import { type THEME_MODE } from "@/Constants/CoomonText";
 
 export interface HeaderProps {
   mode: THEME_MODE;
