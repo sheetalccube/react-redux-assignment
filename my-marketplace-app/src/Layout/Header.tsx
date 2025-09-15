@@ -5,12 +5,12 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "@/Services/AuthSlice";
 import type {RootState} from "@/Store/Store";
-import useHeaderStyle from "./HeaderStyle";
-import DesktopNav from "./DesktopNav";
-import UserBadge from "./UserBadge";
-import AuthButtons from "./AuthButtons";
+import useHeaderStyle from "@/Layout/HeaderStyle";
+import DesktopNav from "@/Layout/DesktopNav";
+import UserBadge from "@/Layout/UserBadge";
+import AuthButtons from "@/Layout/AuthButtons";
 
-import MobileDrawer from "./MobileDrawer";
+import MobileDrawer from "@/Layout/MobileDrawer";
 import {type THEME_MODE} from "@/Constants/CoomonText";
 
 export interface HeaderProps {

@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
 import {NavLink} from "react-router-dom";
-import useHeaderStyle from "./HeaderStyle";
+import useHeaderStyle from "@/Layout/HeaderStyle";
 import type {User} from "@/Services/AuthSlice";
 
 export interface DesktopNavProps {

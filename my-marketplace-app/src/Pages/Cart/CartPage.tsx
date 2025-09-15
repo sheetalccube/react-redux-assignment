@@ -5,7 +5,7 @@ import {clearCart, removeFromCart} from "@/Services/CartSlice";
 import {addOrder} from "@/Services/OrderSlice";
 import {useNavigate} from "react-router-dom";
 import ProductImage from "@/Pages/Product/ProductImage";
-import useCartPageStyle from "./CartPageStyle";
+import useCartPageStyle from "@/Pages/Cart/CartPageStyle";
 
 export default function CartPage() {
   const navigate = useNavigate();

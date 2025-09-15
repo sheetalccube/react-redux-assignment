@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import type {RootState} from "@/Store/Store";
 import ProductImage from "@/Pages/Product/ProductImage";
-import useHistoryPageStyle from "./HistoryPageStyle";
+import useHistoryPageStyle from "@/Pages/History/HistoryPageStyle";
 
 export default function HistoryPage() {
   const orders = useSelector((state: RootState) => state.order.history);

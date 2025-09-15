@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import {useFormik} from "formik";
 import * as Yup from "yup";
-import useSignupStyle from "./SignupStyle";
+import useSignupStyle from "@/Pages/Auth/SignupStyle";
 
 const validationSchema = Yup.object({
   firstName: Yup.string()

@@ -13,7 +13,7 @@ import {useFormik} from "formik";
 import * as Yup from "yup";
 import {useDispatch} from "react-redux";
 import {login} from "@/Services/AuthSlice";
-import useStyle from "./LoginStyle";
+import useStyle from "@/Pages/Auth/LoginStyle";
 
 export default function Login() {
   const navigate = useNavigate();

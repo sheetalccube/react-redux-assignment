@@ -1,6 +1,6 @@
 import {Drawer, Box, Button} from "@mui/material";
 import {NavLink, useNavigate} from "react-router-dom";
-import useHeaderStyle from "./HeaderStyle";
+import useHeaderStyle from "@/Layout/HeaderStyle";
 import type {THEME_MODE} from "@/Constants/CoomonText";
 
 export interface MobileDrawerProps {

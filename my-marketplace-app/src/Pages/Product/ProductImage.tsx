@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {CircularProgress, Box} from "@mui/material";
-import useProductImageStyle from "./ProductImageStyle";
+import useProductImageStyle from "@/Pages/Product/ProductImageStyle";
 
 type ProductImageProps = {
   src: string;

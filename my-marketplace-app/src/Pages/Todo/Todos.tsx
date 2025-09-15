@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import {useFormik} from "formik";
 import * as Yup from "yup";
-import useStyle from "./TodosStyle";
+import useStyle from "@/Pages/Todo/TodosStyle";
 import {useSelector, useDispatch} from "react-redux";
 import type {AppDispatch, RootState} from "@/Store/Store";
 import {

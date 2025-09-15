@@ -1,6 +1,6 @@
 import {Outlet} from "react-router-dom";
 import {Box, Typography, Container, Paper} from "@mui/material";
-import useStyle from "./Homestyle";
+import useStyle from "@/Pages/Home/Homestyle";
 
 function Home() {
   const style = useStyle();

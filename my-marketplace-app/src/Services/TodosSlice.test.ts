@@ -5,7 +5,7 @@ import todosReducer, {
   setEditingTodo,
   type TodosState,
   type TodoItem,
-} from "./TodoSlice";
+} from "@/Services/TodoSlice";
 
 describe("todosSlice", () => {
   let initialState: TodosState;

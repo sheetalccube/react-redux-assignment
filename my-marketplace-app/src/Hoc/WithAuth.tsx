@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Navigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 import type {RootState} from "@/Store/Store";
-import useStyle from "./AuthStyle";
+import useStyle from "@/Hoc/AuthStyle";
 function withAuth<P extends object>(Component: React.ComponentType<P>) {
   function AuthenticatedComponent(props: P) {
     const {isAuthenticated} = useSelector((state: RootState) => state.auth);
