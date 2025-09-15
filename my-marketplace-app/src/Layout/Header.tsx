@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "@/Services/AuthSlice";
 import type {RootState} from "@/Store/Store";
-import useHeaderStyle from "@/Layout/HeaderStyle";
+import useStyle from "@/Layout/HeaderStyle";
 import DesktopNav from "@/Layout/DesktopNav";
 import UserBadge from "@/Layout/UserBadge";
 import AuthButtons from "@/Layout/AuthButtons";
@@ -22,7 +22,7 @@ export default function Header({mode, onToggleTheme}: HeaderProps) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const {isAuthenticated, user} = useSelector((state: RootState) => state.auth);
-  const style = useHeaderStyle();
+  const style = useStyle();
   const [mobileOpen, setMobileOpen] = useState(false);
   const toggleDrawer = () => setMobileOpen((prev) => !prev);
 

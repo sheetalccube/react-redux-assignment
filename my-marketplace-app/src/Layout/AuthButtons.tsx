@@ -1,5 +1,5 @@
 import {Button, Box} from "@mui/material";
-import useHeaderStyle from "@/Layout/HeaderStyle";
+import useStyle from "@/Layout/HeaderStyle";
 export interface AuthButtonsProps {
   isAuthenticated: boolean;
   onLogout: () => void;
@@ -11,7 +11,7 @@ export default function AuthButtons({
   onLogout,
   navigate,
 }: AuthButtonsProps) {
-  const styles = useHeaderStyle();
+  const styles = useStyle();
 
   return isAuthenticated ? (
     <Button

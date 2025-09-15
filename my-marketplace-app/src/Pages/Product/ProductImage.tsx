@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {CircularProgress, Box} from "@mui/material";
-import useProductImageStyle from "@/Pages/Product/ProductImageStyle";
+import useStyle from "@/Pages/Product/ProductImageStyle";
 
 type ProductImageProps = {
   src: string;
@@ -21,7 +21,7 @@ export default function ProductImage({
 }: ProductImageProps) {
   const [loading, setLoading] = useState(true);
   const [imgSrc, setImgSrc] = useState(src);
-  const styles = useProductImageStyle();
+  const styles = useStyle();
   const {height, width} = sizeMap[variant];
 
   return (

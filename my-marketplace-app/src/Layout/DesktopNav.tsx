@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
 import {NavLink} from "react-router-dom";
-import useHeaderStyle from "@/Layout/HeaderStyle";
+import useStyle from "@/Layout/HeaderStyle";
 import type {User} from "@/Services/AuthSlice";
 
 export interface DesktopNavProps {
@@ -9,7 +9,7 @@ export interface DesktopNavProps {
 }
 
 export default function DesktopNav({isAuthenticated, user}: DesktopNavProps) {
-  const style = useHeaderStyle();
+  const style = useStyle();
 
   return (
     <Box sx={style.desktopNav}>

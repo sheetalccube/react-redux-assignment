@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import {useFormik} from "formik";
 import * as Yup from "yup";
-import useSignupStyle from "@/Pages/Auth/SignupStyle";
+import useStyle from "@/Pages/Auth/SignupStyle";
 
 const validationSchema = Yup.object({
   firstName: Yup.string()
@@ -52,7 +52,7 @@ export default function SignupForm() {
     },
   });
 
-  const style = useSignupStyle();
+  const style = useStyle();
 
   return (
     <Container maxWidth="sm" sx={style.container}>

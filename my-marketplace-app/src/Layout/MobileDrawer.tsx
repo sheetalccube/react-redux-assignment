@@ -1,6 +1,6 @@
 import {Drawer, Box, Button} from "@mui/material";
 import {NavLink, useNavigate} from "react-router-dom";
-import useHeaderStyle from "@/Layout/HeaderStyle";
+import useStyle from "@/Layout/HeaderStyle";
 import type {THEME_MODE} from "@/Constants/CoomonText";
 
 export interface MobileDrawerProps {
@@ -22,7 +22,7 @@ export default function MobileDrawer({
   mode,
   handleLogout,
 }: MobileDrawerProps) {
-  const style = useHeaderStyle();
+  const style = useStyle();
   const navigate = useNavigate();
 
   return (

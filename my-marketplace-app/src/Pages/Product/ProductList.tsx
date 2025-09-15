@@ -18,7 +18,7 @@ import {
   useDeleteProductMutation,
   useGetProductsQuery,
 } from "@/Services/ProductApi";
-import useProductListStyle from "@/Pages/Product/ProductListStyle";
+import useStyle from "@/Pages/Product/ProductListStyle";
 import ProductImage from "@/Pages/Product/ProductImage";
 import {useDispatch, useSelector} from "react-redux";
 import {addToCart} from "@/Services/CartSlice";
@@ -30,7 +30,7 @@ export default function ProductList() {
   const {data, isLoading} = useGetProductsQuery({page, limit});
   const [deleteProduct] = useDeleteProductMutation();
   const navigate = useNavigate();
-  const styles = useProductListStyle();
+  const styles = useStyle();
   const dispatch = useDispatch();
   const {isAuthenticated, user} = useSelector((state: RootState) => state.auth);
 

@@ -5,11 +5,11 @@ import {clearCart, removeFromCart} from "@/Services/CartSlice";
 import {addOrder} from "@/Services/OrderSlice";
 import {useNavigate} from "react-router-dom";
 import ProductImage from "@/Pages/Product/ProductImage";
-import useCartPageStyle from "@/Pages/Cart/CartPageStyle";
+import useStyle from "@/Pages/Cart/CartPageStyle";
 
 export default function CartPage() {
   const navigate = useNavigate();
-  const styles = useCartPageStyle();
+  const styles = useStyle();
 
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();

@@ -9,11 +9,11 @@ import {
 } from "@mui/material";
 import type {RootState} from "@/Store/Store";
 import ProductImage from "@/Pages/Product/ProductImage";
-import useHistoryPageStyle from "@/Pages/History/HistoryPageStyle";
+import useStyle from "@/Pages/History/HistoryPageStyle";
 
 export default function HistoryPage() {
   const orders = useSelector((state: RootState) => state.order.history);
-  const styles = useHistoryPageStyle();
+  const styles = useStyle();
 
   if (orders.length === 0) {
     return (
