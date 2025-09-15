@@ -19,8 +19,8 @@ export default function ProductImage({
   alt,
   variant = "list",
 }: ProductImageProps) {
-  const [loading, setLoading] = useState(true);
-  const [imgSrc, setImgSrc] = useState(src);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [imgSrc, setImgSrc] = useState<string>(src);
   const styles = useStyle();
   const {height, width} = sizeMap[variant];
 

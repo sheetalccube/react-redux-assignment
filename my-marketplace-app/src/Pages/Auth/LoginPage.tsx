@@ -17,7 +17,7 @@ import useStyle from "@/Pages/Auth/LoginStyle";
 
 export default function Login() {
   const navigate = useNavigate();
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string>("");
   const dispatch = useDispatch();
   const style = useStyle();
 

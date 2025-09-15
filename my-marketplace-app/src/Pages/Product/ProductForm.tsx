@@ -7,6 +7,14 @@ import {
   useUpdateProductMutation,
 } from "@/Services/ProductApi";
 
+type ProductFormState = {
+  name: string;
+  price: number;
+  image: string;
+  category: string;
+  description: string;
+};
+
 export default function ProductForm() {
   const {id} = useParams<{id: string}>();
   const navigate = useNavigate();
@@ -18,7 +26,7 @@ export default function ProductForm() {
   const [addProduct] = useAddProductMutation();
   const [updateProduct] = useUpdateProductMutation();
 
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<ProductFormState>({
     name: "",
     price: 0,
     image: "",

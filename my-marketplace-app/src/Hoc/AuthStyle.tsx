@@ -1,19 +1,20 @@
-import type {CSSProperties} from "react";
+import {useTheme} from "@mui/material/styles";
 
 export default function useAuthStyle() {
+  const theme = useTheme();
   return {
     container: {
-      marginTop: "2rem",
-      textAlign: "center" as CSSProperties["textAlign"],
+      mt: theme.spacing(4),
+      textAlign: "center",
     },
     heading: {
       fontSize: "1.5rem",
-      fontWeight: "bold",
-      marginBottom: "0.5rem",
+      fontWeight: theme.typography.fontWeightBold,
+      mb: theme.spacing(1),
     },
     message: {
       fontSize: "1rem",
-      color: "#666",
+      color: theme.palette.text.secondary,
     },
   };
 }

@@ -23,7 +23,7 @@ export default function Header({mode, onToggleTheme}: HeaderProps) {
   const dispatch = useDispatch();
   const {isAuthenticated, user} = useSelector((state: RootState) => state.auth);
   const style = useStyle();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const toggleDrawer = () => setMobileOpen((prev) => !prev);
 
   const handleLogout = () => {

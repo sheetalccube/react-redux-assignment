@@ -25,7 +25,7 @@ import {addToCart} from "@/Services/CartSlice";
 import type {RootState} from "@/Store/Store";
 
 export default function ProductList() {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
   const limit = 10;
   const {data, isLoading} = useGetProductsQuery({page, limit});
   const [deleteProduct] = useDeleteProductMutation();
@@ -34,7 +34,7 @@ export default function ProductList() {
   const dispatch = useDispatch();
   const {isAuthenticated, user} = useSelector((state: RootState) => state.auth);
 
-  const [openDialog, setOpenDialog] = useState(false);
+  const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [productIdToDelete, setProductIdToDelete] = useState<number | null>(
     null
   );

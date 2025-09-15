@@ -33,7 +33,7 @@ function Todos() {
   const {items: todos, editingTodo} = useSelector(
     (state: RootState) => state.todos
   );
-  const [openDialog, setOpenDialog] = useState(false);
+  const [openDialog, setOpenDialog] = useState<boolean>(false);
   const [todoIdToDelete, setTodoIdToDelete] = useState<number | null>(null);
 
   const validationSchema = Yup.object({
