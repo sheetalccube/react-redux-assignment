@@ -6,6 +6,7 @@ import {
   useGetProductByIdQuery,
   useUpdateProductMutation,
 } from "@/Services/ProductApi";
+import useStyle from "@/Pages/Product/ProductFormStyle";
 
 type ProductFormState = {
   name: string;
@@ -18,6 +19,7 @@ type ProductFormState = {
 export default function ProductForm() {
   const {id} = useParams<{id: string}>();
   const navigate = useNavigate();
+  const style = useStyle();
 
   const {data: existingProduct} = useGetProductByIdQuery(Number(id), {
     skip: !id,
@@ -60,7 +62,7 @@ export default function ProductForm() {
   };
 
   return (
-    <Box p={2} maxWidth={400} mx="auto">
+    <Box sx={style.container}>
       <Typography variant="h4" gutterBottom align="center">
         {id ? "Edit Product" : "Add Product"}
       </Typography>
@@ -84,14 +86,19 @@ export default function ProductForm() {
         onChange={handleChange}
       />
 
-      <Button variant="outlined" component="label" fullWidth sx={{mt: 2}}>
+      <Button
+        variant="outlined"
+        component="label"
+        fullWidth
+        sx={style.uploadButton}
+      >
         Upload Image
         <input type="file" name="image" hidden onChange={handleChange} />
       </Button>
 
       {form.image && (
-        <Box mt={2} textAlign="center">
-          <img src={form.image} alt="preview" width={120} />
+        <Box sx={style.imagePreview}>
+          <img src={form.image} alt="preview" style={style.image} />
         </Box>
       )}
 
@@ -99,7 +106,7 @@ export default function ProductForm() {
         variant="contained"
         color="primary"
         fullWidth
-        sx={{mt: 3}}
+        sx={style.submitButton}
         onClick={handleSubmit}
       >
         {id ? "Update" : "Create"}
