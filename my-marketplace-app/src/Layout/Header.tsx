@@ -9,7 +9,6 @@ import useStyle from "@/Layout/HeaderStyle";
 import DesktopNav from "@/Layout/DesktopNav";
 import UserBadge from "@/Layout/UserBadge";
 import AuthButtons from "@/Layout/AuthButtons";
-
 import MobileDrawer from "@/Layout/MobileDrawer";
 import {type THEME_MODE} from "@/Constants/CoomonText";
 

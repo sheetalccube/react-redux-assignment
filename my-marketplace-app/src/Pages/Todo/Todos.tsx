@@ -90,7 +90,6 @@ function Todos() {
 
   return (
     <div>
-      {/* Form */}
       <Box component="form" onSubmit={formik.handleSubmit} sx={styles.formBox}>
         <Stack direction="column" spacing={2}>
           <TextField
@@ -136,7 +135,6 @@ function Todos() {
           {editingTodo ? "Update Todo" : "Add Todo"}
         </Button>
       </Box>
-      {/* List View */}
       {todos.length > 0 ? (
         <Box sx={styles.listContainer}>
           <Paper sx={styles.listPaper}>
