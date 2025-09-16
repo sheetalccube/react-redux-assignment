@@ -14,6 +14,7 @@ import * as Yup from "yup";
 import {useDispatch} from "react-redux";
 import {login} from "@/Services/AuthSlice";
 import useStyle from "@/Pages/Auth/LoginStyle";
+import {mockUsers} from "@/Mock/MockUsers";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -41,15 +42,23 @@ export default function Login() {
     },
     validationSchema,
     onSubmit: (values) => {
-      if (values.username === "admin" && values.password === "1234") {
+      const matchedUser = mockUsers.find(
+        (user) =>
+          user.username === values.username && user.password === values.password
+      );
+
+      if (matchedUser) {
         const token = "dummy-token-1234567890";
         localStorage.setItem("token", token);
-        dispatch(login({user: {name: values.username, isAdmin: true}, token}));
-        navigate("/");
-      } else if (values.username === "sheetal" && values.password === "1234") {
-        const token = "dummy-token-1234567890";
-        localStorage.setItem("token", token);
-        dispatch(login({user: {name: values.username}, token}));
+        dispatch(
+          login({
+            user: {
+              name: matchedUser.username,
+              isAdmin: matchedUser.isAdmin ?? false,
+            },
+            token,
+          })
+        );
         navigate("/");
       } else {
         setError("Invalid username or password.");
