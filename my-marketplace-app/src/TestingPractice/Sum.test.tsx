@@ -1,4 +1,4 @@
-import Sum, {addition} from "./sum";
+import Sum, {addition} from "./Sum";
 import {fireEvent, render, screen} from "@testing-library/react";
 
 beforeAll(() => {

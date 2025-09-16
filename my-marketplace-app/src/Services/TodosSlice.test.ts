@@ -1,11 +1,12 @@
-import todosReducer, {
+import {
   addTodo,
-  updateTodo,
   deleteTodo,
   setEditingTodo,
-  type TodosState,
+  updateTodo,
   type TodoItem,
-} from "@/Services/TodoSlice";
+  type TodosState,
+} from "./TodoSlice";
+import todosReducer from "./TodoSlice";
 
 describe("todosSlice", () => {
   let initialState: TodosState;
