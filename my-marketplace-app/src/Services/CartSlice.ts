@@ -12,8 +12,18 @@ type CartState = {
   items: CartItem[];
 };
 
+const loadCartFromStorage = (): CartItem[] => {
+  try {
+    const stored = localStorage.getItem("cart");
+    return stored ? JSON.parse(stored) : [];
+  } catch (error) {
+    console.error("Failed to load cart from localStorage", error);
+    return [];
+  }
+};
+
 const initialState: CartState = {
-  items: [],
+  items: loadCartFromStorage(),
 };
 
 const cartSlice = createSlice({
@@ -29,12 +39,15 @@ const cartSlice = createSlice({
       } else {
         state.items.push({...action.payload, quantity: 1});
       }
+      localStorage.setItem("cart", JSON.stringify(state.items));
     },
     removeFromCart: (state, action: PayloadAction<number | undefined>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
+      localStorage.setItem("cart", JSON.stringify(state.items));
     },
     clearCart: (state) => {
       state.items = [];
+      localStorage.removeItem("cart");
     },
   },
 });
