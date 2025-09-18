@@ -17,6 +17,7 @@ import {useState} from "react";
 import {
   useDeleteProductMutation,
   useGetProductsQuery,
+  type Product,
 } from "@/Services/ProductApi";
 import useStyle from "@/Pages/Product/ProductListStyle";
 import ProductImage from "@/Pages/Product/ProductImage";
@@ -38,6 +39,7 @@ export default function ProductList() {
   const [productIdToDelete, setProductIdToDelete] = useState<number | null>(
     null
   );
+  const cartItems = useSelector((state: RootState) => state.cart.items);
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -53,6 +55,10 @@ export default function ProductList() {
     }
     setOpenDialog(false);
     setProductIdToDelete(null);
+  };
+
+  const isItemInCart = (item: Product) => {
+    return cartItems.some((cartItem) => cartItem.id === item.id);
   };
 
   const handleCancelDelete = () => {
@@ -138,7 +144,7 @@ export default function ProductList() {
                       );
                     }}
                   >
-                    Add to Cart
+                    {isItemInCart(p) ? "Added to Cart" : "Add to Cart"}
                   </Button>
                 )}
               </CardContent>
