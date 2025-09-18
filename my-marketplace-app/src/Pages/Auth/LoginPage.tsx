@@ -48,17 +48,12 @@ export default function Login() {
       );
 
       if (matchedUser) {
-        const token = "dummy-token-1234567890";
-        localStorage.setItem("token", token);
-        dispatch(
-          login({
-            user: {
-              name: matchedUser.username,
-              isAdmin: matchedUser.isAdmin ?? false,
-            },
-            token,
-          })
-        );
+        const userObj = {
+          name: matchedUser.username,
+          isAdmin: matchedUser.isAdmin ?? false,
+        };
+        localStorage.setItem("auth", JSON.stringify({user: userObj}));
+        dispatch(login({user: userObj}));
         navigate("/");
       } else {
         setError("Invalid username or password.");

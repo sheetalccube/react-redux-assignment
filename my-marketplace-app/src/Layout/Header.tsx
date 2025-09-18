@@ -26,7 +26,6 @@ export default function Header({mode, onToggleTheme}: HeaderProps) {
   const toggleDrawer = () => setMobileOpen((prev) => !prev);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
     dispatch(logout());
     navigate("/login");
   };
@@ -67,7 +66,7 @@ export default function Header({mode, onToggleTheme}: HeaderProps) {
         open={mobileOpen}
         onClose={toggleDrawer}
         isAuthenticated={isAuthenticated}
-        isLoggedIn={!!localStorage.getItem("token")}
+        isLoggedIn={!!localStorage.getItem("auth")}
         onToggleTheme={onToggleTheme}
         mode={mode}
         handleLogout={handleLogout}

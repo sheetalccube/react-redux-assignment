@@ -4,7 +4,7 @@ import useStyle from "@/Pages/Home/Homestyle";
 
 function Home() {
   const style = useStyle();
-  const isLoggedIn = localStorage.getItem("token");
+  const isLoggedIn = localStorage.getItem("auth");
 
   return (
     <Container maxWidth="md" sx={style.container}>
