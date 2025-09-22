@@ -11,6 +11,8 @@ import UserBadge from "@/Layout/UserBadge";
 import AuthButtons from "@/Layout/AuthButtons";
 import MobileDrawer from "@/Layout/MobileDrawer";
 import {type THEME_MODE} from "@/Constants/CoomonText";
+import {clearCart} from "@/Services/CartSlice";
+import {clearHistory} from "@/Services/OrderSlice";
 
 export interface HeaderProps {
   mode: THEME_MODE;
@@ -26,6 +28,9 @@ export default function Header({mode, onToggleTheme}: HeaderProps) {
   const toggleDrawer = () => setMobileOpen((prev) => !prev);
 
   const handleLogout = () => {
+    dispatch(clearCart());
+    dispatch(clearHistory());
+
     dispatch(logout());
     navigate("/login");
   };

@@ -12,8 +12,18 @@ type OrderState = {
   history: Order[];
 };
 
+const loadOrdersFromStorage = (): Order[] => {
+  try {
+    const stored = localStorage.getItem("orderHistory");
+    return stored ? JSON.parse(stored) : [];
+  } catch (error) {
+    console.error("Failed to load orders from localStorage:", error);
+    return [];
+  }
+};
+
 const initialState: OrderState = {
-  history: [],
+  history: loadOrdersFromStorage(),
 };
 
 const orderSlice = createSlice({
@@ -22,9 +32,14 @@ const orderSlice = createSlice({
   reducers: {
     addOrder: (state, action: PayloadAction<Order>) => {
       state.history.push(action.payload);
+      localStorage.setItem("orderHistory", JSON.stringify(state.history));
+    },
+    clearHistory: (state) => {
+      state.history = [];
+      localStorage.removeItem("orderHistory");
     },
   },
 });
 
-export const {addOrder} = orderSlice.actions;
+export const {addOrder, clearHistory} = orderSlice.actions;
 export default orderSlice.reducer;
